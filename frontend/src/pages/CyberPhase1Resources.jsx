@@ -1,18 +1,78 @@
+// src/pages/CyberPhase1Resources.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ResourceStyles from './ResourceStyles';
+import ResourceStyles from './ResourceStyles'; // Assuming styles are in the same location
 
 const CyberPhase1Resources = () => (
     <>
         <style>{ResourceStyles}</style>
         <div className="resource-container">
-            <header className="resource-header"><h1>Stage 1: IT & Networking Fundamentals</h1><p>Master the foundational concepts of computing, operating systems, and networking.</p><Link to="/cybersecurity" className="back-link">← Back to Cybersecurity Roadmap</Link></header>
-            <div className="resource-section"><h2>Learning Resources</h2>
-                <div className="resource-item"><h3>Professor Messer's CompTIA Network+ Course</h3><p>The gold standard for free, comprehensive foundational learning on networking concepts.</p><iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLG49S3nxzAnkF_crE2i9_2uV_s_M_2_f-" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
-                <div className="resource-item"><h3>TryHackMe - Pre-Security Learning Path</h3><p>An interactive, gamified path for absolute beginners covering networking, web fundamentals, and Linux.</p><a href="https://tryhackme.com/path/outline/pre-security" target="_blank" rel="noopener noreferrer" className="resource-link">Go to TryHackMe</a></div>
-                <div className="resource-item"><h3>OverTheWire - Bandit Wargame</h3><p>Learn Linux commands in a progressive, challenge-based format that builds true command-line fluency.</p><a href="https://overthewire.org/wargames/bandit/" target="_blank" rel="noopener noreferrer" className="resource-link">Go to OverTheWire</a></div>
+            <header className="resource-header">
+                <h1>Stage 1: IT & Networking Fundamentals</h1>
+                <p>Building the essential groundwork in operating systems, networking, and basic scripting to understand the landscape of cybersecurity.</p>
+                {/* --- CORRECTED LINK --- */}
+                <Link to="/cybersecurity" className="back-link">← Back to Cybersecurity Roadmap</Link>
+            </header>
+
+            {/* Section for Key Topics */}
+            <div className="resource-section">
+                <h2>Key Topics</h2>
+                <div className="resource-item">
+                    <ul>
+                        <li>Operating systems (Windows, Linux): file systems, permissions, processes, kernel basics</li>
+                        <li>Networking fundamentals: OSI model, TCP/IP, subnetting, routing, NAT, DNS, ARP, DHCP</li>
+                        <li>Basic protocols: HTTP, HTTPS, FTP, SMTP, SSH, TLS/SSL, DNS, ICMP</li>
+                        <li>Hardware & architecture: CPU, memory, storage, disks, buses, I/O</li>
+                        <li>Virtualization and containers: hypervisors, VM, containers (Docker basics)</li>
+                        <li>Basic scripting: shell/batch, introduction to Python</li>
+                    </ul>
+                </div>
+            </div>
+
+            {/* Section for Curated Resources */}
+            <div className="resource-section">
+                <h2>Resources</h2>
+                {/* --- Books/Notes --- */}
+                <div className="resource-item">
+                    <h3>📄 Free Book/Notes: Cyber Security for Beginners (PDF)</h3>
+                    <p>An introductory resource covering fundamental concepts of cybersecurity for new learners.</p>
+                    <a href="https://www.researchgate.net/publication/375075414_Cyber_Security_for_Beginners" target="_blank" rel="noopener noreferrer" className="resource-link">Read PDF</a>
+                </div>
+                <div className="resource-item">
+                    <h3>📄 Notes: Digital Notes on Cyber Security (R18A0521)</h3>
+                    <p>Covers basic concepts, threats, and models in cybersecurity from an academic perspective.</p>
+                    <a href="https://mrcet.com/pdf/Lab%20Manuals/IT/CYBER%20SECURITY%20%28R18A0521%29.pdf?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="resource-link">Read PDF</a>
+                </div>
+
+                {/* --- Courses --- */}
+                <div className="resource-item">
+                    <h3>🎓 Course: SANS Cyber Aces (free foundational security & technology courses)</h3>
+                    <p>Offers free foundational courses in cybersecurity and related IT technologies, a great starting point for beginners.</p>
+                    <a href="https://www.sans.org/cyberaces?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="resource-link">Go to SANS Cyber Aces</a>
+                </div>
+                <div className="resource-item">
+                    <h3>🎓 Course: Cybrary free courses on IT fundamentals / networking</h3>
+                    <p>Access free courses on IT fundamentals and networking from Cybrary, a leading online cybersecurity training platform.</p>
+                    <a href="https://www.cybrary.it/free-content?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="resource-link">Go to Cybrary</a>
+                </div>
+
+                {/* --- YouTube Video --- */}
+                <div className="resource-item">
+                    <h3>▶️ YouTube: Internet Networks & Network Security</h3>
+                    <p>An introductory video explaining how internet networks function and fundamental concepts of network security.</p>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/NIRXtMg-0z8?si=O3mrV1I5xA6NB0YZ"
+                        title="YouTube video player (Internet Networks & Network Security)"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen>
+                    </iframe>
+                </div>
             </div>
         </div>
     </>
 );
+
 export default CyberPhase1Resources;

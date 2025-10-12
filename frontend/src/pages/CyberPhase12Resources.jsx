@@ -1,18 +1,51 @@
+// src/pages/CyberPhase12Resources.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ResourceStyles from './ResourceStyles';
+import ResourceStyles from './ResourceStyles'; // Assuming styles are in the same location
 
 const CyberPhase12Resources = () => (
     <>
         <style>{ResourceStyles}</style>
         <div className="resource-container">
-            <header className="resource-header"><h1>Stage 12: Real-World Projects</h1><p>Demonstrate initiative and creativity by building your own projects, such as a home detection lab or custom tools.</p><Link to="/cybersecurity" className="back-link">← Back to Cybersecurity Roadmap</Link></header>
-            <div className="resource-section"><h2>Project Ideas & Hosting</h2>
-                <div className="resource-item"><h3>Build a Home "Detection Lab"</h3><p>A great project to showcase defensive skills. Build a virtual network, configure a SIEM, and practice detecting your own attacks.</p></div>
-                <div className="resource-item"><h3>GitHub</h3><p>The central hub for open-source projects and for hosting your own project code, scripts, and documentation.</p><a href="https://github.com" target="_blank" rel="noopener noreferrer" className="resource-link">Go to GitHub</a></div>
-                <div className="resource-item"><h3>HackerOne / Bugcrowd</h3><p>The leading platforms for bug bounty programs, where you can gain experience finding vulnerabilities in real applications.</p><a href="https://www.hackerone.com" target="_blank" rel="noopener noreferrer" className="resource-link">Go to HackerOne</a></div>
+            <header className="resource-header">
+                <h1>Stage 12: Real-World Projects</h1>
+                <p>Applying cybersecurity knowledge to practical projects to build a strong portfolio and demonstrate hands-on defense and offense capabilities.</p>
+                <Link to="/cybersecurity" className="back-link">← Back to Cybersecurity Roadmap</Link>
+            </header>
+
+            {/* Section for Key Topics (Project Ideas) */}
+            <div className="resource-section">
+                <h2>Project Ideas</h2>
+                <div className="resource-item">
+                    <ul>
+                        <li>Build a fully secured web app (front end, API, DB) with defense in depth, logging, alerts</li>
+                        <li>Create a small red-team / blue-team exercise in your lab (you play both roles)</li>
+                        <li>Simulate phishing + social engineering campaign (harmless) in a controlled lab environment</li>
+                        <li>Build malware demo (e.g., simple backdoor) and analyze it</li>
+                        <li>Design an enterprise IAM + PKI system</li>
+                    </ul>
+                </div>
+            </div>
+
+            {/* Section for Curated Resources */}
+            <div className="resource-section">
+                <h2>Resources</h2>
+                <div className="resource-item">
+                    <h3>▶️ YouTube: 13 Cyber Security Projects to get you HIRED</h3>
+                    <p>A video showcasing various cybersecurity project ideas that can help you build an impressive portfolio and get hired.</p>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/CWtLdR2SxNY?si=xJALQaJcT3Jr6Nc9"
+                        title="YouTube video player (13 Cyber Security Projects)"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen>
+                    </iframe>
+                </div>
             </div>
         </div>
     </>
 );
+
 export default CyberPhase12Resources;
