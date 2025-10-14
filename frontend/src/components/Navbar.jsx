@@ -31,10 +31,10 @@ const Navbar = () => {
             Skill Based Roadmaps
           </NavLink>
           <NavLink 
-            to="/resume-Analyzer" 
+            to="/resume-Builder" 
             className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
           >
-            Resume Analyzer
+            Resume Builder
           </NavLink>
            <NavLink 
             to="/jobs" 
