@@ -96,16 +96,15 @@ const roadmapStages = [
     { id: 3, title: 'Stage 3: Game Engine Mastery', objective: 'Choose a primary game engine (Unity recommended for beginners) and master its core concepts, interface, and scripting API.' },
     { id: 4, title: 'Stage 4: Gameplay Systems and Mechanics', objective: 'Design and implement the core interactive systems that define a game, such as player controls, combat, inventory, and progression.' },
     { id: 5, title: 'Stage 5: Game Physics and Simulation', objective: 'Understand and effectively utilize the game engine\'s built-in physics simulation to create dynamic and believable interactions.' },
-    { id: 6, title: 'Stage 6: Game AI and NPC Behavior', objective: 'Breathe life into non-player characters by implementing artificial intelligence for decision-making and navigation using FSMs and Pathfinding.' },
+    { id: 6, title: 'Stage 6: Game AI ', objective: 'Breathe life into non-player characters by implementing artificial intelligence for decision-making and navigation using FSMs and Pathfinding.' },
     { id: 7, title: 'Stage 7: Multiplayer and Networking', objective: 'Understand the fundamental principles of network programming and implement basic multiplayer functionality using a client-server architecture.' },
     { id: 8, title: 'Stage 8: Visuals and Technical Art', objective: 'Learn the artistic pipeline and the technical skills required to implement visual elements like materials, shaders, lighting, and VFX.' },
     { id: 9, title: 'Stage 9: Performance Optimization', objective: 'Learn how to use profiling tools to identify, analyze, and fix performance bottlenecks to ensure games run smoothly.' },
-    { id: 10, title: 'Stage 10: Game Design and UX Principles', objective: 'Develop a foundational understanding of game design theory, level design, and User Experience (UX) to create engaging and intuitive games.' },
+    { id: 10, title: 'Stage 10: Game Design Analysis', objective: 'Develop a foundational understanding of game design theory, level design, and User Experience (UX) to create engaging and intuitive games.' },
     { id: 11, title: 'Stage 11: Monetization and Publishing', objective: 'Understand the business side of game development, including monetization models and the process of publishing on platforms like Steam.' },
     { id: 12, title: 'Stage 12: Real-World Projects', objective: 'Transition from small exercises to building complete, polished games to form the core of your professional portfolio.' },
     { id: 13, title: 'Stage 13: Portfolio and Resume Strategy', objective: 'Effectively showcase your skills and projects to potential employers through a professional portfolio website and a well-crafted resume.' },
-    { id: 14, title: 'Stage 14: Career Paths and Specializations', objective: 'Understand the different career trajectories within game development and begin planning for a long-term specialization.' },
-    { id: 15, title: 'Stage 15: Interview Preparation', objective: 'Prepare for technical and behavioral interviews by practicing coding problems, reviewing core concepts, and refining your communication skills.' }
+    { id: 14, title: 'Stage 14: Interview Preparation', objective: 'Prepare for technical and behavioral interviews by practicing coding problems, reviewing core concepts, and refining your communication skills.' }
 ];
 
 const GameDeveloperRoadmap = () => {
@@ -121,7 +120,7 @@ const GameDeveloperRoadmap = () => {
             <div className="gd-roadmap-container">
                 <header className="gd-roadmap-header">
                     <h1>The Game Developer Roadmap</h1>
-                    <p>A complete 15-stage guide from beginner to employable Game Developer, focusing on foundational principles, hands-on projects, and professional readiness.</p>
+                    <p>A complete 14-stage guide from beginner to employable Game Developer, focusing on foundational principles, hands-on projects, and professional readiness.</p>
                 </header>
                 {roadmapStages.map(stage => (
                     <div key={stage.id} className={`gd-phase-card ${activeStage === stage.id ? 'active' : ''}`}>

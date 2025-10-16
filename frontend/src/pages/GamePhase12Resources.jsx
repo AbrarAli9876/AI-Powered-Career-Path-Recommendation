@@ -1,17 +1,50 @@
+// src/pages/GamePhase12Resources.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ResourceStyles from './ResourceStyles';
+import ResourceStyles from './ResourceStyles'; // Assuming styles are in the same location
 
 const GamePhase12Resources = () => (
     <>
         <style>{ResourceStyles}</style>
         <div className="resource-container">
-            <header className="resource-header"><h1>Stage 12: Real-World Projects</h1><p>Transition from small exercises to building complete, polished games for your portfolio.</p><Link to="/game-developer" className="back-link">← Back to Game Developer Roadmap</Link></header>
-            <div className="resource-section"><h2>Game Jam Platforms</h2>
-                <div className="resource-item"><h3>itch.io - Game Jams</h3><p>The largest host of game jams. A great place to find events, practice rapid prototyping, and build portfolio pieces.</p><a href="https://itch.io/jams" target="_blank" rel="noopener noreferrer" className="resource-link">Find a Jam</a></div>
-                <div className="resource-item"><h3>Ludum Dare</h3><p>One of the most well-known and longest-running game jam events in the world.</p><a href="https://ldjam.com/" target="_blank" rel="noopener noreferrer" className="resource-link">Go to Ludum Dare</a></div>
+            <header className="resource-header">
+                <h1>Stage 12: Real-World Projects</h1>
+                <p>Applying all learned skills to build complete, playable games, demonstrating proficiency across different genres and technical challenges.</p>
+                <Link to="/game-developer-roadmap" className="back-link">← Back to Game Developer Roadmap</Link>
+            </header>
+
+            {/* Section for Key Topics (Project Ideas) */}
+            <div className="resource-section">
+                <h2>Key Topics: Build at least 3 complete playable games</h2>
+                <div className="resource-item">
+                    <ul>
+                        <li>2D Platformer </li>
+                        <li>3D Shooter / RPG Prototype </li>
+                        <li>Multiplayer Mini-Game </li>
+                    </ul>
+                </div>
+            </div>
+
+            {/* Section for Curated Resources */}
+            <div className="resource-section">
+                <h2>Resources</h2>
+                {/* --- YouTube Video --- */}
+                <div className="resource-item">
+                    <h3>▶️ YouTube: How to make a Video Game - Godot Beginner Tutorial</h3>
+                    <p>A beginner-friendly tutorial series on making video games using the Godot Engine, a great alternative for independent developers.</p>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/LOhfqjmasi0?si=y1v1FXW2nAdUF8qU"
+                        title="YouTube video player (Godot Beginner Tutorial)"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen>
+                    </iframe>
+                </div>
             </div>
         </div>
     </>
 );
+
 export default GamePhase12Resources;

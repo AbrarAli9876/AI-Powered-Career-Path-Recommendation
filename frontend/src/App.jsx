@@ -124,7 +124,6 @@ import GamePhase11Resources from './pages/GamePhase11Resources';
 import GamePhase12Resources from './pages/GamePhase12Resources';
 import GamePhase13Resources from './pages/GamePhase13Resources';
 import GamePhase14Resources from './pages/GamePhase14Resources';
-import GamePhase15Resources from './pages/GamePhase15Resources';
 
 // Machine Learning Engineer Resources
 import MLPhase1Resources from './pages/MLPhase1Resources';
@@ -465,7 +464,6 @@ function App() {
             <Route path="/game-developer/stage-12-resources" element={<GamePhase12Resources />} />
             <Route path="/game-developer/stage-13-resources" element={<GamePhase13Resources />} />
             <Route path="/game-developer/stage-14-resources" element={<GamePhase14Resources />} />
-            <Route path="/game-developer/stage-15-resources" element={<GamePhase15Resources />} />
             
             <Route path="/ml-engineer/stage-1-resources" element={<MLPhase1Resources />} />
             <Route path="/ml-engineer/stage-2-resources" element={<MLPhase2Resources />} />
