@@ -59,7 +59,7 @@ const GamePhase13Resources = () => (
                 <div className="resource-item">
                     <ul>
                         <li>Share your development journey—not just finished products.</li>
-                        <li>**Platforms to use:**
+                        <li>Platforms to use:
                             <ul>
                                 <li>YouTube → Short devlogs explaining features you build.</li>
                                 <li>LinkedIn → Clean professional summaries or milestones.</li>
@@ -83,7 +83,7 @@ const GamePhase13Resources = () => (
                     <ul>
                         <li>Start with a role-focused headline, e.g., "Gameplay Programmer (C++ / Unreal / AI Systems)".</li>
                         <li>Put Projects at the top not education or certifications.</li>
-                        <li>**Each project should include:**
+                        <li>Each project should include:
                             <ul>
                                 <li>Name + one-line description</li>
                                 <li>Role + Technologies used (C++, Unreal, Blueprints, etc.)</li>
