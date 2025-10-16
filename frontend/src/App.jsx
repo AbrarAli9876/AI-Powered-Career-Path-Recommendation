@@ -18,6 +18,7 @@ import Assessment from './pages/Assessment';
 import ResumeBuilder from './pages/ResumeBuilder.jsx';
 import Jobs from './pages/Jobs';
 import MockInterview from './pages/MockInterview';
+import LearnGlobalLanguages from './pages/LearnGlobalLanguages';
 
 // --- Import All Job-Based Roadmap Main Pages ---
 import DataScientistRoadmap from './pages/DataScientistRoadmap';
@@ -360,6 +361,7 @@ function App() {
             <Route path="/resume-builder" element={<ResumeBuilder />} />
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/mock-interview" element={<MockInterview />} />
+            <Route path="/languages" element={<LearnGlobalLanguages />} />
 
             {/* --- Main Job-Based Roadmap Routes --- */}
             <Route path="/data-scientist" element={<DataScientistRoadmap />} />

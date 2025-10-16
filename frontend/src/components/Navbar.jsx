@@ -48,6 +48,16 @@ const Navbar = () => {
           >
             Mock Interview
           </NavLink>
+
+          {/* === NEW LINK ADDED HERE === */}
+          <NavLink 
+            to="/languages" 
+            className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+          >
+            Learn Global Languages
+          </NavLink>
+          {/* =========================== */}
+
           <NavLink 
             to="/about" 
             className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
@@ -61,4 +71,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

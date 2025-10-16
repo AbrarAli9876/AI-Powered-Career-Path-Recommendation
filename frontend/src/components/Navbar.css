@@ -51,14 +51,13 @@
 }
 /* -------------------------- */
 
+
+
 .navbar-links {
   display: flex;
   align-items: center;
   gap: 2.5rem;
-  /* Key styles for centering the links */
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  
 }
 
 .nav-link {
