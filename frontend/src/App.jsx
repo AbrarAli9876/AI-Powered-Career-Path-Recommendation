@@ -146,13 +146,6 @@ import UIDesignerPhase5Resources from './pages/UIDesignerPhase5Resources';
 import UIDesignerPhase6Resources from './pages/UIDesignerPhase6Resources';
 import UIDesignerPhase7Resources from './pages/UIDesignerPhase7Resources';
 import UIDesignerPhase8Resources from './pages/UIDesignerPhase8Resources';
-import UIDesignerPhase9Resources from './pages/UIDesignerPhase9Resources';
-import UIDesignerPhase10Resources from './pages/UIDesignerPhase10Resources';
-import UIDesignerPhase11Resources from './pages/UIDesignerPhase11Resources';
-import UIDesignerPhase12Resources from './pages/UIDesignerPhase12Resources';
-import UIDesignerPhase13Resources from './pages/UIDesignerPhase13Resources';
-import UIDesignerPhase14Resources from './pages/UIDesignerPhase14Resources';
-
 // Python Skill Roadmap Resources
 import PythonStage1Resources from './pages/skills/PythonStage1Resources';
 import PythonStage2Resources from './pages/skills/PythonStage2Resources';
@@ -667,13 +660,6 @@ function App() {
             <Route path="/mobile-ui-designer/stage-6" element={<UIDesignerPhase6Resources />} />
             <Route path="/mobile-ui-designer/stage-7" element={<UIDesignerPhase7Resources />} />
             <Route path="/mobile-ui-designer/stage-8" element={<UIDesignerPhase8Resources />} />
-            <Route path="/mobile-ui-designer/stage-9" element={<UIDesignerPhase9Resources />} />
-            <Route path="/mobile-ui-designer/stage-10" element={<UIDesignerPhase10Resources />} />
-            <Route path="/mobile-ui-designer/stage-11" element={<UIDesignerPhase11Resources />} />
-            <Route path="/mobile-ui-designer/stage-12" element={<UIDesignerPhase12Resources />} />
-            <Route path="/mobile-ui-designer/stage-13" element={<UIDesignerPhase13Resources />} />
-            <Route path="/mobile-ui-designer/stage-14" element={<UIDesignerPhase14Resources />} />
-
 
             {/* --- Fallback Route --- */}
             <Route path="*" element={

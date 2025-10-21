@@ -1,32 +1,56 @@
-// src/pages/UIDesignerPhase5Resources.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ResourceStyles from './ResourceStyles';
+import ResourceStyles from './ResourceStyles'; // Assuming styles are in the same location
 
 const UIDesignerPhase5Resources = () => (
     <>
         <style>{ResourceStyles}</style>
         <div className="resource-container">
             <header className="resource-header">
-                <h1>Stage 5: Wireframing & Prototyping</h1>
-                <p>Learn to translate abstract concepts into tangible screen layouts and create interactive simulations of your app.</p>
-                <Link to="/mobile-ui-designer" className="back-link">← Back to Mobile UI Designer Roadmap</Link>
+                <h1>Stage 5: Design Systems & Collaboration</h1>
+                <p>Learning how to build and maintain scalable design frameworks, ensuring consistency and efficient collaboration across design and development teams.</p>
+                <Link to="/mobile-ui-designer" className="back-link">← Back to UI/UX Designer Roadmap</Link>
             </header>
+
+            {/* Section for Key Topics */}
             <div className="resource-section">
-                <h2>Tutorials</h2>
+                <h2>Key Topics</h2>
                 <div className="resource-item">
-                    <h3>Figma Prototyping Tutorial for Beginners (Figma)</h3>
-                    <p>The official video tutorial from Figma that teaches you how to link screens together to create simple, clickable prototypes, bringing your static designs to life.</p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4__s-T4JblA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    <ul>
+                        <li>Atomic Design Methodology</li>
+                        <li>Components, variants, tokens (for design systems)</li>
+                        <li>Collaboration with developers & product managers</li>
+                    </ul>
                 </div>
+            </div>
+
+            {/* Section for Curated Resources */}
+            <div className="resource-section">
+                <h2>Resources</h2>
+                {/* --- Course --- */}
                 <div className="resource-item">
-                    <h3>Learn Figma - UI/UX Design Essential Training (Udemy)</h3>
-                    <p>A comprehensive paid course by Caleb Kingston that covers wireframing and prototyping in a hands-on, project-based way.</p>
-                    <a href="https://www.udemy.com/course/learn-figma/" target="_blank" rel="noopener noreferrer" className="resource-link">View on Udemy</a>
+                    <h3>🎓 Course: Building Design System in Figma from Scratch - UI UX Mastery (Udemy)</h3>
+                    <p>A comprehensive course on building a complete design system using Figma, covering all aspects from tokens to components. </p>
+                    <a href="https://www.udemy.com/course/building-design-system-in-figma-from-scratch-ui-ux-class/?couponCode=DIWALI30" target="_blank" rel="noopener noreferrer" className="resource-link">Go to Udemy Course</a>
+                </div>
+
+                {/* --- YouTube Video --- */}
+                <div className="resource-item">
+                    <h3>▶️ YouTube: Design System | Figma Tutorial for UIUX Designers</h3>
+                    <p>A detailed Figma tutorial explaining how to create and manage a design system for UI/UX designers. </p>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/shuIfhrLIP0?si=eg9VB83yh8aH7ZC2"
+                        title="YouTube video player (Design System Figma Tutorial)"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen>
+                    </iframe>
                 </div>
             </div>
         </div>
     </>
 );
-export default UIDesignerPhase5Resources;
 
+export default UIDesignerPhase5Resources;

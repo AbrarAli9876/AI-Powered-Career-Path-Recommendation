@@ -1,37 +1,58 @@
-// src/pages/UIDesignerPhase6Resources.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ResourceStyles from './ResourceStyles';
+import ResourceStyles from './ResourceStyles'; // Assuming styles are in the same location
 
 const UIDesignerPhase6Resources = () => (
     <>
         <style>{ResourceStyles}</style>
         <div className="resource-container">
             <header className="resource-header">
-                <h1>Stage 6: Mastering Your Tools (Figma)</h1>
-                <p>Move from basic knowledge to confident, efficient execution in the industry-standard design tool, Figma.</p>
-                <Link to="/mobile-ui-designer" className="back-link">← Back to Mobile UI Designer Roadmap</Link>
+                <h1>Stage 6: Real-World Projects</h1>
+                <p>Gaining hands-on experience by building comprehensive projects and assembling a portfolio that effectively showcases your UI/UX design skills to recruiters.</p>
+                <Link to="/mobile-ui-designer" className="back-link">← Back to UI/UX Designer Roadmap</Link>
             </header>
+
+            {/* Section for Key Topics */}
             <div className="resource-section">
-                <h2>Courses & Community</h2>
+                <h2>Key Topics</h2>
                 <div className="resource-item">
-                    <h3>Figma's Official YouTube Channel</h3>
-                    <p>The best place to start, with countless tutorials on every feature, from the basics of the interface to advanced features like Auto Layout, Components, and Variants.</p>
-                    <a href="https://www.youtube.com/c/Figma" target="_blank" rel="noopener noreferrer" className="resource-link">Go to Channel</a>
+                    <ul>
+                        <li>Build 3–5 complete projects: mobile apps, dashboards, or web apps.</li>
+                        <li>Include problem → process → solution → results in each case study.</li>
+                        <li>Apply UX research, wireframing, prototyping, visual design, and handoff principles.</li>
+                        <li>Test your designs with real users and iterate based on feedback.</li>
+                        <li>Tools: Figma, Adobe XD, Maze (for usability testing), Notion (for case study documentation).</li>
+                    </ul>
                 </div>
-                 <div className="resource-item">
-                    <h3>Figma Community</h3>
-                    <p>An invaluable resource where you can find and duplicate files from other designers to deconstruct how professional designs are built. This is one of the best ways to learn.</p>
-                    <a href="https://www.figma.com/community" target="_blank" rel="noopener noreferrer" className="resource-link">Explore Community</a>
-                </div>
+            </div>
+
+            {/* Section for Curated Resources */}
+            <div className="resource-section">
+                <h2>Resources</h2>
+                {/* --- Course --- */}
                 <div className="resource-item">
-                    <h3>Complete Figma Megacourse (Udemy)</h3>
-                    <p>A comprehensive paid course that takes you from beginner to expert in Figma, covering UI/UX design, prototyping, and building a full project.</p>
-                     <a href="https://www.udemy.com/course/complete-figma-megacourse-uiux-design-beginner-to-expert/" target="_blank" rel="noopener noreferrer" className="resource-link">View on Udemy</a>
+                    <h3>🎓 Course: Capstone Project: Applying UI/UX Design in the Real World (Coursera)</h3>
+                    <p>Work through a capstone project that allows you to apply all your learned UI/UX design skills to a real-world scenario, building a substantial portfolio piece. </p>
+                    <a href="https://www.coursera.org/learn/ux-ui-captsone-project" target="_blank" rel="noopener noreferrer" className="resource-link">Go to Coursera Course</a>
+                </div>
+
+                {/* --- YouTube Video --- */}
+                <div className="resource-item">
+                    <h3>▶️ YouTube: Top 10 UI/UX Projects For Beginners 2025 | UI/UX Design Project Ideas</h3>
+                    <p>Discover a range of engaging UI/UX design project ideas that are perfect for beginners looking to build their portfolio. </p>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/zTElKDsC9Fw?si=Ozo99bL1RtJT9pO2"
+                        title="YouTube video player (Top 10 UI/UX Projects)"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen>
+                    </iframe>
                 </div>
             </div>
         </div>
     </>
 );
-export default UIDesignerPhase6Resources;
 
+export default UIDesignerPhase6Resources;

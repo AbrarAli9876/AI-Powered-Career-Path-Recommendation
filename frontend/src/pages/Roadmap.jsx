@@ -11,7 +11,7 @@ const careerPaths = [
   { name: 'Cloud Architect', path: '/cloud-architect', description: 'Design and manage scalable, secure, and resilient cloud infrastructure.' },
   { name: 'Cybersecurity', path: '/cybersecurity', description: 'Protect digital systems and data from threats and vulnerabilities.' },
   { name: 'Game Developer', path: '/game-developer', description: 'Bring interactive worlds and creative visions to life through code.' },
-  { name: 'Mobile UI Designer', path: '/mobile-ui-designer', description: 'Design intuitive and visually appealing interfaces for mobile applications.' },
+  { name: 'UI/UX Designer', path: '/mobile-ui-designer', description: 'Design intuitive and visually appealing interfaces for mobile applications.' },
   { name: 'Full-Stack Developer', path: '#', description: 'Build and maintain both the frontend and backend of web applications. (Coming Soon)' },
   { name: 'Ethical Hacker', path: '#', description: 'Identify and exploit vulnerabilities in systems to improve security. (Coming Soon)' },
   { name: 'IAAC Engineer', path: '#', description: 'Automate and manage cloud infrastructure through code. (Coming Soon)' },
