@@ -158,13 +158,6 @@ import PythonStage8Resources from './pages/skills/PythonStage8Resources';
 import PythonStage9Resources from './pages/skills/PythonStage9Resources';
 import PythonStage10Resources from './pages/skills/PythonStage10Resources';
 import PythonStage11Resources from './pages/skills/PythonStage11Resources';
-import PythonStage12Resources from './pages/skills/PythonStage12Resources';
-import PythonStage13Resources from './pages/skills/PythonStage13Resources';
-import PythonStage14Resources from './pages/skills/PythonStage14Resources';
-import PythonStage15Resources from './pages/skills/PythonStage15Resources';
-import PythonStage16Resources from './pages/skills/PythonStage16Resources';
-import PythonStage17Resources from './pages/skills/PythonStage17Resources';
-import PythonStage18Resources from './pages/skills/PythonStage18Resources';
 
 
 // JavaScript Skill Roadmap Resources
@@ -481,13 +474,6 @@ function App() {
             <Route path="/skills/python/stage-9" element={<PythonStage9Resources />} />
             <Route path="/skills/python/stage-10" element={<PythonStage10Resources />} />
             <Route path="/skills/python/stage-11" element={<PythonStage11Resources />} />
-            <Route path="/skills/python/stage-12" element={<PythonStage12Resources />} />
-            <Route path="/skills/python/stage-13" element={<PythonStage13Resources />} />
-            <Route path="/skills/python/stage-14" element={<PythonStage14Resources />} />
-            <Route path="/skills/python/stage-15" element={<PythonStage15Resources />} />
-            <Route path="/skills/python/stage-16" element={<PythonStage16Resources />} />
-            <Route path="/skills/python/stage-17" element={<PythonStage17Resources />} />
-            <Route path="/skills/python/stage-18" element={<PythonStage18Resources />} />
             
             <Route path="/skills/javascript/stage-1" element={<JSPhase1Resources />} />
             <Route path="/skills/javascript/stage-2" element={<JSPhase2Resources />} />
