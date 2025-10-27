@@ -1,7 +1,6 @@
-// src/pages/skills/JSPhase3Resources.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ResourceStyles from '../ResourceStyles';
+import ResourceStyles from '../ResourceStyles'; // Assuming styles are in the parent directory (src/pages/)
 
 const JSPhase3Resources = () => (
     <>
@@ -9,23 +8,59 @@ const JSPhase3Resources = () => (
         <div className="resource-container">
             <header className="resource-header">
                 <h1>Stage 3: DOM Manipulation & Browser APIs</h1>
-                <p>Learn to make web pages interactive by manipulating the Document Object Model and responding to user events.</p>
+                <p>Learning how to interact with web pages using the Document Object Model (DOM), handle events, and utilize common Browser APIs like fetch and localStorage.</p>
                 <Link to="/skills/javascript" className="back-link">← Back to JavaScript Roadmap</Link>
             </header>
+
+            {/* Section for Key Topics */}
             <div className="resource-section">
-                <h2>Project-Based Learning</h2>
+                <h2>Key Topics</h2>
                 <div className="resource-item">
-                    <h3>JavaScript30 by Wes Bos</h3>
-                    <p>A free video course with 30 fun, vanilla JS mini-projects heavily focused on DOM manipulation and browser APIs.</p>
-                    <a href="https://javascript30.com/" target="_blank" rel="noopener noreferrer" className="resource-link">Start the Course</a>
+                    <ul>
+                        <li>Document Object Model (DOM)</li>
+                        <li>Selecting elements (getElementById, querySelector, etc.)</li>
+                        <li>Event handling (addEventListener, event types)</li>
+                        <li>Modifying HTML/CSS via JS</li>
+                        <li>Browser APIs (localStorage, sessionStorage, fetch)</li>
+                    </ul>
                 </div>
+            </div>
+
+            {/* Section for Curated Resources */}
+            <div className="resource-section">
+                <h2>Resources</h2>
+                {/* --- Book --- */}
                 <div className="resource-item">
-                    <h3>The Odin Project - DOM Manipulation</h3>
-                    <p>An excellent, project-focused curriculum that forces you to build things to learn, providing a practical understanding of the DOM.</p>
-                    <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript#dom-manipulation-and-events" target="_blank" rel="noopener noreferrer" className="resource-link">Go to Odin Project</a>
+                    <h3>📘 Book: Eloquent JavaScript (Chapters on Browser Scripting)</h3>
+                    <p>Refer back to Eloquent JavaScript for its excellent sections covering how JavaScript interacts with the browser and manipulates the DOM. </p>
+                    {/* Link provided in Phase 1 */}
+                     <a href="https://eloquentjavascript.net/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className="resource-link">Read Online for Free</a>
+                </div>
+
+                {/* --- Notes --- */}
+                <div className="resource-item">
+                    <h3>📝 Notes: javascript.info – Browser: Document & Events sections</h3>
+                    <p>Detailed tutorials on the DOM, manipulating elements, and handling browser events from the comprehensive javascript.info site.</p>
+                    <a href="https://javascript.info/document" target="_blank" rel="noopener noreferrer" className="resource-link">Go to javascript.info</a>
+                </div>
+
+                {/* --- YouTube Video --- */}
+                <div className="resource-item">
+                    <h3>▶️ YouTube: JavaScript DOM Manipulation – Full Course for Beginners</h3>
+                    <p>A complete video course focused on teaching beginners how to manipulate the Document Object Model using JavaScript. </p>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/5fb2aPlgoys?si=MLnGL5CpLvxavv3q"
+                        title="YouTube video player (JavaScript DOM Manipulation)"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen>
+                    </iframe>
                 </div>
             </div>
         </div>
     </>
 );
+
 export default JSPhase3Resources;
