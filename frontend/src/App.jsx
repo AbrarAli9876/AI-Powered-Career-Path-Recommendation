@@ -206,17 +206,6 @@ import SQLPhase4Resources from './pages/skills/SQLPhase4Resources';
 import SQLPhase5Resources from './pages/skills/SQLPhase5Resources';
 import SQLPhase6Resources from './pages/skills/SQLPhase6Resources';
 import SQLPhase7Resources from './pages/skills/SQLPhase7Resources';
-import SQLPhase8Resources from './pages/skills/SQLPhase8Resources';
-import SQLPhase9Resources from './pages/skills/SQLPhase9Resources';
-import SQLPhase10Resources from './pages/skills/SQLPhase10Resources';
-import SQLPhase11Resources from './pages/skills/SQLPhase11Resources';
-import SQLPhase12Resources from './pages/skills/SQLPhase12Resources';
-import SQLPhase13Resources from './pages/skills/SQLPhase13Resources';
-import SQLPhase14Resources from './pages/skills/SQLPhase14Resources';
-import SQLPhase15Resources from './pages/skills/SQLPhase15Resources';
-import SQLPhase16Resources from './pages/skills/SQLPhase16Resources';
-import SQLPhase17Resources from './pages/skills/SQLPhase17Resources';
-
 // Docker Skill Roadmap Resources
 import DockerPhase1Resources from './pages/skills/DockerPhase1Resources';
 import DockerPhase2Resources from './pages/skills/DockerPhase2Resources';
@@ -518,16 +507,6 @@ function App() {
             <Route path="/skills/sql/stage-5" element={<SQLPhase5Resources />} />
             <Route path="/skills/sql/stage-6" element={<SQLPhase6Resources />} />
             <Route path="/skills/sql/stage-7" element={<SQLPhase7Resources />} />
-            <Route path="/skills/sql/stage-8" element={<SQLPhase8Resources />} />
-            <Route path="/skills/sql/stage-9" element={<SQLPhase9Resources />} />
-            <Route path="/skills/sql/stage-10" element={<SQLPhase10Resources />} />
-            <Route path="/skills/sql/stage-11" element={<SQLPhase11Resources />} />
-            <Route path="/skills/sql/stage-12" element={<SQLPhase12Resources />} />
-            <Route path="/skills/sql/stage-13" element={<SQLPhase13Resources />} />
-            <Route path="/skills/sql/stage-14" element={<SQLPhase14Resources />} />
-            <Route path="/skills/sql/stage-15" element={<SQLPhase15Resources />} />
-            <Route path="/skills/sql/stage-16" element={<SQLPhase16Resources />} />
-            <Route path="/skills/sql/stage-17" element={<SQLPhase17Resources />} />
 
             <Route path="/skills/docker/stage-1" element={<DockerPhase1Resources />} />
             <Route path="/skills/docker/stage-2" element={<DockerPhase2Resources />} />
