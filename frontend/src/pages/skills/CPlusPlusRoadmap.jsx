@@ -5,25 +5,14 @@ import { Link } from 'react-router-dom';
 import './SkillPage.css';
 
 const cppStages = [
-    { id: 1, title: 'Stage 1: Introduction to C++ & Development Setup', objective: 'Understand the philosophy of C++, the compilation process, and set up a professional development environment.' },
-    { id: 2, title: 'Stage 2: Basics & Core Syntax', objective: 'Learn the fundamental building blocks of C++, including variables, data types, operators, and basic I/O.' },
-    { id: 3, title: 'Stage 3: Control Structures', objective: 'Learn to dictate the flow of execution in your program with conditional logic (if, switch) and loops (for, while).' },
-    { id: 4, title: 'Stage 4: Functions', objective: 'Master the fundamental unit of code organization, including parameters, return values, and pass-by-reference vs. pass-by-value.' },
-    { id: 5, title: 'Stage 5: Arrays & Strings', objective: 'Learn to use both low-level C-style arrays/strings and the modern, safer std::vector and std::string.' },
-    { id: 6, title: 'Stage 6: Pointers & References', objective: 'Gain a deep understanding of C++\'s most powerful features for direct memory control.' },
-    { id: 7, title: 'Stage 7: Dynamic Memory Management', objective: 'Learn to manually manage memory with new/delete and master modern, safer alternatives with smart pointers (RAII).' },
-    { id: 8, title: 'Stage 8: Object-Oriented Programming (OOP)', objective: 'Learn the fundamentals of OOP by defining classes with constructors, destructors, and member functions.' },
-    { id: 9, title: 'Stage 9: Advanced OOP & Design Principles', objective: 'Master the four pillars of OOP (Encapsulation, Abstraction, Inheritance, Polymorphism) and the SOLID principles.' },
-    { id: 10, title: 'Stage 10: Standard Template Library (STL)', objective: 'Master the cornerstone of modern C++, including containers (vector, map), iterators, and algorithms (sort, find).' },
-    { id: 11, title: 'Stage 11: Error Handling & Debugging', objective: 'Learn to write robust code with C++ exception handling and use professional tools like GDB and Valgrind to find bugs.' },
-    { id: 12, title: 'Stage 12: File Handling', objective: 'Learn to read from and write to files using C++\'s fstream library.' },
-    { id: 13, title: 'Stage 13: Modern C++ (C++11 and beyond)', objective: 'Become fluent in the features that revolutionized the language, like auto, lambdas, and move semantics.' },
-    { id: 14, title: 'Stage 14: Templates & Generic Programming', objective: 'Learn to write code that is independent of any particular type, the foundation of the STL.' },
-    { id: 15, title: 'Stage 15: Data Structures & Algorithms (DSA) in C++', objective: 'Understand how common data structures work internally and be able to implement them from scratch.' },
-    { id: 16, title: 'Stage 16: Real-World Applications (Choose Career Path)', objective: 'Begin to specialize in a domain like Game Development, Embedded Systems, or High-Performance Computing.' },
-    { id: 17, title: 'Stage 17: Best Practices & Performance Optimization', objective: 'Learn to write code that is not just correct, but also clean, maintainable, and fast.' },
-    { id: 18, title: 'Stage 18: Project Ideas (Beginner to Advanced)', objective: 'Synthesize your knowledge by building a portfolio of complete, polished projects.' },
-    { id: 19, title: 'Stage 19: Interview Preparation', objective: 'Prepare for technical interviews by practicing DSA problems, C++ language specifics, and system design.' },
+    { id: 1, title: 'Stage 1: Introduction, Setup & Core Basics', objective: 'Build a strong foundation in C++ syntax, understand how programs compile and execute, and get familiar with the development environment (IDE, compiler, and debugging tools).' },
+    { id: 2, title: 'Stage 2: Arrays, Strings, Pointers & Memory Management', objective: 'Master data storage and manipulation using arrays and strings, learn how memory works, and develop an in-depth understanding of pointers, references, and dynamic memory allocation.' },
+    { id: 3, title: 'Stage 3: Object-Oriented Programming & Design Principles', objective: 'Learn to design efficient and modular programs using classes, objects, inheritance, polymorphism, encapsulation, and abstraction. Apply design principles to write scalable and reusable code.' },
+    { id: 4, title: 'Stage 4: STL, Templates & Modern C++', objective: 'Utilize the Standard Template Library (STL) for quick, optimized development; implement generic programming with templates; and explore modern C++ features (C++11–C++20) for clean, powerful code.' },
+    { id: 5, title: 'Stage 5: Data Structures, Algorithms & Optimization', objective: 'Apply C++ to implement core data structures (like linked lists, stacks, queues, trees, and graphs), understand algorithmic logic, and focus on writing time- and memory-efficient programs.' },
+    { id: 6, title: 'Stage 6: Real-World Projects', objective: 'Gain practical experience by building real-world C++ projects that integrate multiple concepts such as OOP, STL, and algorithms, showcasing your ability to solve real-life problems.' },
+    { id: 7, title: 'Stage 7: Portfolio & Resume strategy', objective: 'Develop a professional portfolio by showcasing your best C++ projects on GitHub, write impactful resume points focusing on C++ and problem-solving skills, and align your work with job expectations.' },
+    { id: 8, title: 'Stage 8: Interview Preparation', objective: 'Prepare for technical interviews by practicing C++-specific coding challenges, system design questions, and theory-based concepts; strengthen your problem-solving and communication skills.' },
 ];
 
 const CPlusPlusRoadmap = () => {
