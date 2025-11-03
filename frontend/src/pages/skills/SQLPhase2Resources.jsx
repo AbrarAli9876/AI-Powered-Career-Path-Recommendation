@@ -9,7 +9,7 @@ const SQLPhase2Resources = () => (
             <header className="resource-header">
                 <h1>Stage 2: Querying, Filtering & Relationships</h1>
                 <p>Learning how to retrieve specific data using filtering, ordering, joins, aggregations, and subqueries to work with relational data.</p>
-                <Link to="/sql-roadmap" className="back-link">← Back to SQL Roadmap</Link>
+                <Link to="/skills/sql" className="back-link">← Back to SQL Roadmap</Link>
             </header>
 
             {/* Section for Key Topics */}

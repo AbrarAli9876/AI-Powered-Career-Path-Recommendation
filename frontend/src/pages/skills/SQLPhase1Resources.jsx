@@ -9,7 +9,7 @@ const SQLPhase1Resources = () => (
             <header className="resource-header">
                 <h1>Stage 1: Database Foundations & Setup</h1>
                 <p>Understanding the fundamentals of databases, relational models, SQL vs NoSQL, and setting up your first database environment.</p>
-                <Link to="/sql-roadmap" className="back-link">← Back to SQL Roadmap</Link>
+                <Link to="/skills/sql" className="back-link">← Back to SQL Roadmap</Link>
             </header>
 
             {/* Section for Key Topics */}

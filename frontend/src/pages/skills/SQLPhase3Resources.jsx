@@ -9,7 +9,7 @@ const SQLPhase3Resources = () => (
             <header className="resource-header">
                 <h1>Stage 3: Advanced SQL Concepts & Optimization</h1>
                 <p>Diving into advanced SQL features like window functions, CTEs, and understanding database optimization, indexing, and normalization.</p>
-                <Link to="/sql-roadmap" className="back-link">← Back to SQL Roadmap</Link>
+                <Link to="/skills/sql" className="back-link">← Back to SQL Roadmap</Link>
             </header>
 
             {/* Section for Key Topics */}

@@ -9,7 +9,7 @@ const SQLPhase7Resources = () => (
             <header className="resource-header">
                 <h1>Stage 7: Interview Preparation</h1>
                 <p>Confidently clear SQL interviews by mastering technical, logical, and scenario-based questions with hands-on query practice.</p>
-                <Link to="/sql-roadmap" className="back-link">← Back to SQL Roadmap</Link>
+                <Link to="/skills/sql" className="back-link">← Back to SQL Roadmap</Link>
             </header>
 
             {/* Section for Key Focus Areas */}

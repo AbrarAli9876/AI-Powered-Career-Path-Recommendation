@@ -9,7 +9,7 @@ const SQLPhase4Resources = () => (
             <header className="resource-header">
                 <h1>Stage 4: Data Engineering</h1>
                 <p>Applying SQL skills in the context of data engineering, including ETL processes, data warehousing, and integrating SQL with programming languages like Python.</p>
-                <Link to="/sql-roadmap" className="back-link">← Back to SQL Roadmap</Link>
+                <Link to="/skills/sql" className="back-link">← Back to SQL Roadmap</Link>
             </header>
 
             {/* Section for Key Topics */}

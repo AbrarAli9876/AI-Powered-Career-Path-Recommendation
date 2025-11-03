@@ -9,7 +9,7 @@ const SQLPhase6Resources = () => (
             <header className="resource-header">
                 <h1>Stage 6: Portfolio & Resume Strategy</h1>
                 <p>Showcasing your SQL skills through real-world projects, a strong GitHub presence, and a recruiter-friendly resume highlighting measurable achievements.</p>
-                <Link to="/sql-roadmap" className="back-link">← Back to SQL Roadmap</Link>
+                <Link to="/skills/sql" className="back-link">← Back to SQL Roadmap</Link>
             </header>
 
             {/* Section for Key Focus Areas */}

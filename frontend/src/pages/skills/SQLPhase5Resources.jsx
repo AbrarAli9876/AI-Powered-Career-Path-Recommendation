@@ -9,7 +9,7 @@ const SQLPhase5Resources = () => (
             <header className="resource-header">
                 <h1>Stage 5: Real-World Projects</h1>
                 <p>Applying your SQL knowledge to design, build, and optimize database projects, demonstrating practical skills in data management and analysis.</p>
-                <Link to="/sql-roadmap" className="back-link">← Back to SQL Roadmap</Link>
+                <Link to="/skills/sql" className="back-link">← Back to SQL Roadmap</Link>
             </header>
 
             {/* Section for Key Topics */}
