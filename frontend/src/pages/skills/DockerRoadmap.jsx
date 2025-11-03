@@ -1,29 +1,20 @@
-// src/pages/skills/DockerRoadmap.jsx
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './SkillPage.css';
 
 const dockerStages = [
-    { id: 1, title: 'Stage 1: Introduction to Containers & Virtualization', objective: 'Establish the conceptual foundation by understanding the "why" behind Docker and how containerization solves fundamental problems in software development.' },
-    { id: 2, title: 'Stage 2: Docker Installation & Setup', objective: 'Install the necessary tools, configure your environment, and run your first container to get immediate, tangible results.' },
-    { id: 3, title: 'Stage 3: Core Docker Concepts', objective: 'Master the fundamental CLI commands for managing the lifecycle of containers and images, forming the bedrock of daily interaction with Docker.' },
-    { id: 4, title: 'Stage 4: Docker Images & Dockerfiles', objective: 'Transition from a consumer to a creator by learning to write Dockerfiles, the blueprints for building custom, reproducible application environments.' },
-    { id: 5, title: 'Stage 5: Managing Data with Docker', objective: 'Address the critical need for data persistence by learning to manage stateful data using Docker Volumes and Bind Mounts.' },
-    { id: 6, title: 'Stage 6: Networking in Docker', objective: 'Demystify how containers communicate with each other and the outside world, enabling the creation of multi-service applications.' },
-    { id: 7, title: 'Stage 7: Docker Compose', objective: 'Learn to define and run multi-container applications declaratively, transforming complex commands into a single, manageable YAML file.' },
-    { id: 8, title: 'Stage 8: Docker Registry & Image Distribution', objective: 'Understand how to store, share, and distribute your container images using registries like Docker Hub and GitHub Container Registry.' },
-    { id: 9, title: 'Stage 9: Security & Best Practices', objective: 'Learn fundamental security practices for building and running containers responsibly, including secrets management and vulnerability scanning.' },
-    { id: 10, title: 'Stage 10: Docker for Development & CI/CD', objective: 'Streamline local development workflows and automate the build, test, and deployment of your applications with CI/CD pipelines.' },
-    { id: 11, title: 'Stage 11: Docker for Deployment', objective: 'Learn to run containers in a production-like environment and get an introduction to orchestration with Docker Swarm.' },
-    { id: 12, title: 'Stage 12: Real-World Docker Use Cases', objective: 'Apply your knowledge to containerize common application architectures, from web apps and databases to reverse proxies.' },
-    { id: 13, title: 'Stage 13: Performance Optimization', objective: 'Refine Docker images and container runtime configurations for production, focusing on efficiency, speed, and resource management.' },
-    { id: 14, title: 'Stage 14: Troubleshooting & Debugging', objective: 'Develop a systematic approach to diagnosing and resolving common Docker errors and issues.' },
-    { id: 15, title: 'Stage 15: Real-World Projects', objective: 'Synthesize all acquired knowledge to build and deploy complete, non-trivial projects for a professional portfolio.' },
-    { id: 16, title: 'Stage 16: Interview Preparation & Certification', objective: 'Translate your skills into career opportunities by preparing for technical interviews and validating your expertise with the DCA certification.' },
+    { id: 1, title: 'Stage 1: Foundations of Containers & Docker Setup', objective: 'To understand the core concepts of containerization, differences between containers and virtual machines, and set up a functional Docker environment for hands-on learning.' },
+    { id: 2, title: 'Stage 2: Core Docker Concepts & Images', objective: 'To master building, managing, and running Docker images and containers, along with learning how to write efficient Dockerfiles and use core Docker CLI commands.' },
+    { id: 3, title: 'Stage 3: Data, Networking & Multi-Container Apps', objective: 'To learn how to manage persistent data, configure Docker networks, and orchestrate multiple containers using Docker Compose for real-world applications.' },
+    { id: 4, title: 'Stage 4: Security, CI/CD & Deployment', objective: 'To understand Docker security best practices, integrate Docker into CI/CD pipelines, and deploy containerized applications to various environments securely and efficiently.' },
+    { id: 5, title: 'Stage 5: Storage, Optimization & Troubleshooting', objective: 'To develop the ability to optimize Docker performance, manage container storage effectively, and troubleshoot common issues in containerized environments.' },
+    { id: 6, title: 'Stage 6: Real-World Projects', objective: 'To apply Docker knowledge to practical scenarios by building, testing, and deploying real-world applications that demonstrate containerization and automation skills.' },
+    { id: 7, title: 'Stage 7: Portfolio & Resume Strategy', objective: 'To create a strong professional portfolio showcasing Docker projects, optimize resumes for DevOps roles, and establish an impactful GitHub and LinkedIn presence.' },
+    { id: 8, title: 'Stage 8: Interview Preparation', objective: 'To confidently prepare for Docker and DevOps interviews by revising core concepts, practicing scenario-based questions, and effectively communicating project experiences.' },
 ];
 
 const DockerRoadmap = () => {
+// ... existing code ...
     const [activeStage, setActiveStage] = useState(null);
 
     const toggleStage = (stageId) => {
@@ -41,7 +32,7 @@ const DockerRoadmap = () => {
                     <div key={stage.id} className={`stage-card ${activeStage === stage.id ? 'active' : ''}`}>
                         <div className="stage-header" onClick={() => toggleStage(stage.id)}>
                             <h2>{stage.title}</h2>
-                            <span className="stage-toggle">+</span>
+                            <span className="stage-toggle">{activeStage === stage.id ? '−' : '+'}</span>
                         </div>
                         {activeStage === stage.id && (
                             <div className="stage-content">

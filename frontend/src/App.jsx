@@ -215,14 +215,6 @@ import DockerPhase5Resources from './pages/skills/DockerPhase5Resources';
 import DockerPhase6Resources from './pages/skills/DockerPhase6Resources';
 import DockerPhase7Resources from './pages/skills/DockerPhase7Resources';
 import DockerPhase8Resources from './pages/skills/DockerPhase8Resources';
-import DockerPhase9Resources from './pages/skills/DockerPhase9Resources';
-import DockerPhase10Resources from './pages/skills/DockerPhase10Resources';
-import DockerPhase11Resources from './pages/skills/DockerPhase11Resources';
-import DockerPhase12Resources from './pages/skills/DockerPhase12Resources';
-import DockerPhase13Resources from './pages/skills/DockerPhase13Resources';
-import DockerPhase14Resources from './pages/skills/DockerPhase14Resources';
-import DockerPhase15Resources from './pages/skills/DockerPhase15Resources';
-import DockerPhase16Resources from './pages/skills/DockerPhase16Resources';
 
 // C++ Skill Roadmap Resources
 import CPlusPlusPhase1Resources from './pages/skills/CPlusPlusPhase1Resources';
@@ -516,14 +508,6 @@ function App() {
             <Route path="/skills/docker/stage-6" element={<DockerPhase6Resources />} />
             <Route path="/skills/docker/stage-7" element={<DockerPhase7Resources />} />
             <Route path="/skills/docker/stage-8" element={<DockerPhase8Resources />} />
-            <Route path="/skills/docker/stage-9" element={<DockerPhase9Resources />} />
-            <Route path="/skills/docker/stage-10" element={<DockerPhase10Resources />} />
-            <Route path="/skills/docker/stage-11" element={<DockerPhase11Resources />} />
-            <Route path="/skills/docker/stage-12" element={<DockerPhase12Resources />} />
-            <Route path="/skills/docker/stage-13" element={<DockerPhase13Resources />} />
-            <Route path="/skills/docker/stage-14" element={<DockerPhase14Resources />} />
-            <Route path="/skills/docker/stage-15" element={<DockerPhase15Resources />} />
-            <Route path="/skills/docker/stage-16" element={<DockerPhase16Resources />} />
             
             <Route path="/skills/cplusplus/stage-1" element={<CPlusPlusPhase1Resources />} />
             <Route path="/skills/cplusplus/stage-2" element={<CPlusPlusPhase2Resources />} />
