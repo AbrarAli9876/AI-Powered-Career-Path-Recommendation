@@ -307,8 +307,6 @@ import BashPhase5Resources from './pages/skills/BashPhase5Resources';
 import BashPhase6Resources from './pages/skills/BashPhase6Resources';
 import BashPhase7Resources from './pages/skills/BashPhase7Resources';
 import BashPhase8Resources from './pages/skills/BashPhase8Resources';
-import BashPhase9Resources from './pages/skills/BashPhase9Resources';
-import BashPhase10Resources from './pages/skills/BashPhase10Resources';
 
 
 function App() {
@@ -598,8 +596,6 @@ function App() {
             <Route path="/skills/bash/stage-6" element={<BashPhase6Resources />} />
             <Route path="/skills/bash/stage-7" element={<BashPhase7Resources />} />
             <Route path="/skills/bash/stage-8" element={<BashPhase8Resources />} />
-            <Route path="/skills/bash/stage-9" element={<BashPhase9Resources />} />
-            <Route path="/skills/bash/stage-10" element={<BashPhase10Resources />} />
 
             <Route path="/mobile-ui-designer/stage-1" element={<UIDesignerPhase1Resources />} />
             <Route path="/mobile-ui-designer/stage-2" element={<UIDesignerPhase2Resources />} />

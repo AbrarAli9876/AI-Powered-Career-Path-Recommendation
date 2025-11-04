@@ -5,16 +5,14 @@ import { Link } from 'react-router-dom';
 import './SkillPage.css';
 
 const bashStages = [
-    { id: 1, title: 'Stage 1: The Shell Environment & Basic Commands', objective: 'Understand the role of the shell and master the fundamental commands for navigating and interacting with a Linux/macOS filesystem.' },
-    { id: 2, title: 'Stage 2: Permissions, Users, and Processes', objective: 'Learn to manage file permissions, user accounts, and running processes—the core of system administration.' },
-    { id: 3, title: 'Stage 3: I/O Redirection & Text Processing', objective: 'Master the powerful concept of I/O streams and use classic Unix tools to filter, search, and manipulate text data.' },
-    { id: 4, title: 'Stage 4: Introduction to Bash Scripting', objective: 'Transition from single commands to writing your first scripts by learning about variables, user input, and basic arithmetic.' },
-    { id: 5, title: 'Stage 5: Logic and Control Flow in Scripts', objective: 'Add decision-making and repetition to your scripts with conditional statements (if) and loops (for, while).' },
-    { id: 6, title: 'Stage 6: Functions and Script Structure', objective: 'Learn to write modular, reusable, and readable scripts by organizing code into functions and handling arguments.' },
-    { id: 7, title: 'Stage 7: Advanced Scripting Techniques', objective: 'Explore more advanced topics like arrays, string manipulation, and best practices for writing robust and professional scripts.' },
-    { id: 8, title: 'Stage 8: Automation and Scheduling', objective: 'Learn to automate the execution of your scripts at specific times or intervals using `cron`.' },
-    { id: 9, title: 'Stage 9: Real-World Applications (DevOps & Cybersecurity)', objective: 'Apply your Bash skills to practical scenarios in system administration, DevOps automation, and cybersecurity tasks.' },
-    { id: 10, title: 'Stage 10: Portfolio & Interview Preparation', objective: 'Solidify your knowledge by building portfolio projects and preparing for common Bash-related interview questions.' },
+    { id: 1, title: 'Stage 1: Shell Basics & Core Linux Commands', objective: 'Gain foundational understanding of Linux shell environments and develop confidence using essential command-line tools to navigate, manage files, and interact with the operating system efficiently.' },
+    { id: 2, title: 'Stage 2: Text Processing, Redirection & Filters', objective: 'Learn to manipulate text streams using redirection, pipes, and filters to extract, transform, and process data efficiently — preparing for automation and scripting tasks.' },
+    { id: 3, title: 'Stage 3: Bash Scripting Foundations', objective: 'Understand the basics of writing and executing Bash scripts including variables, user input, and exit statuses — enabling simple task automation.' },
+    { id: 4, title: 'Stage 4: Structuring & Advanced Scripting', objective: 'Build structured, reusable, and maintainable shell scripts using control flow, loops, functions, debugging, and error handling to solve real operational problems.' },
+    { id: 5, title: 'Stage 5: Automation & Real-World Integrations', objective: 'Automate recurring system tasks and integrate Bash with other tools, services, files, and system utilities to support DevOps and system administration workflows.' },
+    { id: 6, title: 'Stage 6: Real-World Projects', objective: 'Apply accumulated Bash knowledge to build real-world, production-ready tools that demonstrate practical capability in automation, security, logging, text processing, and system monitoring.' },
+    { id: 7, title: 'Stage 7: Portfolio & Resume Strategy', objective: 'Showcase Bash skills through well-documented GitHub projects and highlight scripting-based achievements professionally in a resume/portfolio for Bash/sysadmin/DevOps roles.' },
+    { id: 8, title: 'Stage 8: Interview Preparation', objective: 'Prepare for job interviews by strengthening Bash problem-solving skills, understanding system concepts, practicing scenario-based challenges, and learning frequently asked questions.' },
 ];
 
 const BashRoadmap = () => {
