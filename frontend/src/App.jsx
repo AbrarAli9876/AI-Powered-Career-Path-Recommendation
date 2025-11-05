@@ -295,9 +295,6 @@ import GoPhase4Resources from './pages/skills/GoPhase4Resources';
 import GoPhase5Resources from './pages/skills/GoPhase5Resources';
 import GoPhase6Resources from './pages/skills/GoPhase6Resources';
 import GoPhase7Resources from './pages/skills/GoPhase7Resources';
-import GoPhase8Resources from './pages/skills/GoPhase8Resources';
-import GoPhase9Resources from './pages/skills/GoPhase9Resources';
-import GoPhase10Resources from './pages/skills/GoPhase10Resources';
 
 import BashPhase1Resources from './pages/skills/BashPhase1Resources';
 import BashPhase2Resources from './pages/skills/BashPhase2Resources';
@@ -584,9 +581,6 @@ function App() {
             <Route path="/skills/golang/stage-5" element={<GoPhase5Resources />} />
             <Route path="/skills/golang/stage-6" element={<GoPhase6Resources />} />
             <Route path="/skills/golang/stage-7" element={<GoPhase7Resources />} />
-            <Route path="/skills/golang/stage-8" element={<GoPhase8Resources />} />
-            <Route path="/skills/golang/stage-9" element={<GoPhase9Resources />} />
-            <Route path="/skills/golang/stage-10" element={<GoPhase10Resources />} />
 
             <Route path="/skills/bash/stage-1" element={<BashPhase1Resources />} />
             <Route path="/skills/bash/stage-2" element={<BashPhase2Resources />} />

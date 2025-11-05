@@ -1,5 +1,3 @@
-// src/pages/ResumeBuilder.jsx
-
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ResumeBuilder.css';
@@ -16,7 +14,7 @@ const careerRoles = [
     'Write your own...'
 ];
 
-// Simplified keywords for the prompt
+// Note: roleKeywords is not directly used in the prompt but is good for future reference
 const roleKeywords = {
     'Data Scientist': 'Python, SQL, Statistics, Machine Learning, Pandas, Scikit-learn, Data Visualization',
     'AI Engineer': 'Python, TensorFlow/PyTorch, NLP, Computer Vision, Deep Learning, Algorithms',
@@ -44,13 +42,20 @@ const ResumeBuilder = () => {
         return selectedRole === 'Write your own...' ? customRole : selectedRole;
     };
     
+    // --- GEMINI FILE UPLOAD ---
+    // This function uploads the file to the Gemini API's file service first
     const uploadFileToGemini = async (file) => {
         setLoadingMessage('Uploading resume...');
-        const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+        // IMPORTANT: Use VITE_GEMINI_API_KEY
+        const apiKey = import.meta.env.VITE_GEMINI_API_KEY; 
+        if (!apiKey) {
+            throw new Error("Gemini API key (VITE_GEMINI_API_KEY) is not set.");
+        }
+        
         const uploadUrl = `https://generativelanguage.googleapis.com/v1beta/files?key=${apiKey}`;
 
         const formData = new FormData();
-        formData.append('file', file);
+        formData.append('file', file, file.name);
 
         const response = await fetch(uploadUrl, {
             method: 'POST',
@@ -58,17 +63,20 @@ const ResumeBuilder = () => {
         });
 
         if (!response.ok) {
-            throw new Error('File upload failed.');
+            const errorBody = await response.text();
+            throw new Error(`File upload failed: ${response.statusText} - ${errorBody}`);
         }
         const result = await response.json();
         return result.file;
     };
+    // --- END GEMINI FILE UPLOAD ---
 
 
-    const formatPrompt = (fileUri, fileName) => {
+    const formatPrompt = () => {
         const finalTargetRole = getTargetRole();
         const allRoles = ['Data Scientist', 'AI Engineer', 'Machine Learning Engineer', 'Cloud Architect', 'Cybersecurity', 'Game Developer', 'Mobile UI Designer', 'Full-Stack Developer'];
 
+        // This prompt structure is designed for the Gemini API
         return `
             You are an expert career coach and technical recruiter. Your task is to analyze the provided resume file and compare it against the user's stated career goal.
 
@@ -101,18 +109,24 @@ const ResumeBuilder = () => {
             setError('Please select a target role and attach your resume file.');
             return;
         }
+        
         setIsLoading(true);
         setError('');
         setAnalysisResult(null);
 
         try {
+            // 1. Upload the file (PDF, DOCX, TXT) to Gemini
             const uploadedFile = await uploadFileToGemini(resumeFile);
             
             setLoadingMessage('AI is analyzing your resume...');
 
-            const prompt = formatPrompt(uploadedFile.uri, uploadedFile.name);
+            // 2. Prepare the prompt for the model
+            const prompt = formatPrompt();
+            
+            // 3. Call the Gemini model with the file reference
             const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+            // Use a model that supports file (blob) inputs
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`; 
 
             const response = await fetch(apiUrl, {
                 method: 'POST',
@@ -121,20 +135,27 @@ const ResumeBuilder = () => {
                     contents: [{
                         parts: [
                             { text: prompt },
+                            // Pass the file data using its URI
                             { file_data: { mime_type: uploadedFile.mimeType, file_uri: uploadedFile.uri } }
                         ]
-                    }]
+                    }],
+                    // Request JSON output
+                    generationConfig: {
+                        responseMimeType: "application/json",
+                    }
                 }),
             });
 
             if (!response.ok) {
-                throw new Error(`API analysis error: ${response.statusText}`);
+                const errorBody = await response.text();
+                throw new Error(`API analysis error: ${response.statusText} - ${errorBody}`);
             }
 
             const result = await response.json();
             const responseText = result.candidates?.[0]?.content?.parts?.[0]?.text;
 
             if (responseText) {
+                // The response should be JSON, but we clean it just in case
                 const cleanedJsonString = responseText.replace(/```json|```/g, '').trim();
                 const parsedResult = JSON.parse(cleanedJsonString);
                 setAnalysisResult(parsedResult);
@@ -143,7 +164,7 @@ const ResumeBuilder = () => {
             }
 
         } catch (err) {
-            setError('Failed to get analysis. Please check the console and try again.');
+            setError(`Failed to get analysis: ${err.message}. Please try again.`);
             console.error(err);
         } finally {
             setIsLoading(false);
@@ -157,6 +178,7 @@ const ResumeBuilder = () => {
         const file = event.target.files[0];
         if (file) {
             setResumeFile(file);
+            setError(''); // Clear error on new file select
         }
     };
 
@@ -180,7 +202,20 @@ const ResumeBuilder = () => {
         setIsDragging(false);
         const file = e.dataTransfer.files[0];
         if (file) {
-            setResumeFile(file);
+            // Check for allowed file types
+            const allowedTypes = [
+                "text/plain",
+                "application/pdf",
+                "application/msword",
+                "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            ];
+            if (allowedTypes.includes(file.type)) {
+                setResumeFile(file);
+                setError('');
+            } else {
+                setError('Invalid file type. Only .pdf, .docx, or .txt files are supported.');
+                setResumeFile(null);
+            }
         }
     };
 
@@ -230,11 +265,13 @@ const ResumeBuilder = () => {
                             ref={fileInputRef} 
                             onChange={handleFileChange} 
                             style={{ display: 'none' }}
+                            // --- RESTORED FILE TYPES ---
                             accept=".txt,.pdf,.doc,.docx,text/plain,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                         />
                         <div className="file-prompt-content">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fillRule="evenodd" d="M10.5 3.75a2.25 2.25 0 00-2.25 2.25v10.19l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V6a2.25 2.25 0 00-2.25-2.25z" clipRule="evenodd" /><path d="M16.5 3.75a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0V3.75z" /></svg>
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="upload-icon"><path fillRule="evenodd" d="M10.5 3.75a2.25 2.25 0 00-2.25 2.25v10.19l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V6a2.25 2.25 0 00-2.25-2.25z" clipRule="evenodd" /><path d="M16.5 3.75a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0V3.75z" /></svg>
                             {resumeFile ? <span>File Selected: <strong>{resumeFile.name}</strong></span> : <span>Click to upload or drop your resume here</span>}
+                            {/* --- RESTORED HELP TEXT --- */}
                             <p className="file-types">Supports .pdf, .docx, .txt</p>
                         </div>
                     </div>
@@ -261,16 +298,16 @@ const ResumeBuilder = () => {
                     {analysisResult.bestFitRole !== getTargetRole() && (
                          <div className="feedback-columns">
                              <div className="feedback-column">
-                                <h3>Gap Analysis for {getTargetRole()}</h3>
+                                 <h3>Gap Analysis for {getTargetRole()}</h3>
                                 <ul>
-                                    {analysisResult.gapAnalysis.map((point, index) => <li key={index}>{point}</li>)}
-                                </ul>
+                                     {analysisResult.gapAnalysis.map((point, index) => <li key={index}>{point}</li>)}
+                                 </ul>
                             </div>
                             <div className="feedback-column">
-                                <h3>🚀 Learning Suggestions</h3>
+                                 <h3>🚀 Learning Suggestions</h3>
                                 <ul>
-                                    {analysisResult.learningSuggestions.map((suggestion, index) => <li key={index}>{suggestion}</li>)}
-                                </ul>
+                                     {analysisResult.learningSuggestions.map((suggestion, index) => <li key={index}>{suggestion}</li>)}
+                                 </ul>
                             </div>
                          </div>
                     )}
@@ -278,7 +315,7 @@ const ResumeBuilder = () => {
                         <button className="btn btn-primary" onClick={handleExploreClick}>
                             Explore Job Based Roadmaps
                         </button>
-                    </div>
+                     </div>
                 </div>
             )}
         </div>
@@ -286,4 +323,3 @@ const ResumeBuilder = () => {
 };
 
 export default ResumeBuilder;
-
