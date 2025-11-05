@@ -26,6 +26,23 @@ const roleKeywords = {
     'Full-Stack Developer': 'JavaScript, React, Node.js, SQL/NoSQL Databases, REST APIs, HTML/CSS'
 };
 
+// --- NEW HELPER FUNCTION ---
+// Converts a File object to a GoogleGenerativeAI.Part object (inlineData)
+async function fileToGenerativePart(file) {
+    const base64EncodedDataPromise = new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result.split(',')[1]);
+        reader.readAsDataURL(file);
+    });
+    return {
+        inlineData: {
+            data: await base64EncodedDataPromise,
+            mimeType: file.type
+        }
+    };
+}
+// --- END HELPER FUNCTION ---
+
 const ResumeBuilder = () => {
     const navigate = useNavigate();
     const [selectedRole, setSelectedRole] = useState(careerRoles[0]);
@@ -42,35 +59,7 @@ const ResumeBuilder = () => {
         return selectedRole === 'Write your own...' ? customRole : selectedRole;
     };
     
-    // --- GEMINI FILE UPLOAD ---
-    // This function uploads the file to the Gemini API's file service first
-    const uploadFileToGemini = async (file) => {
-        setLoadingMessage('Uploading resume...');
-        // IMPORTANT: Use VITE_GEMINI_API_KEY
-        const apiKey = import.meta.env.VITE_GEMINI_API_KEY; 
-        if (!apiKey) {
-            throw new Error("Gemini API key (VITE_GEMINI_API_KEY) is not set.");
-        }
-        
-        const uploadUrl = `https://generativelanguage.googleapis.com/v1beta/files?key=${apiKey}`;
-
-        const formData = new FormData();
-        formData.append('file', file, file.name);
-
-        const response = await fetch(uploadUrl, {
-            method: 'POST',
-            body: formData,
-        });
-
-        if (!response.ok) {
-            const errorBody = await response.text();
-            throw new Error(`File upload failed: ${response.statusText} - ${errorBody}`);
-        }
-        const result = await response.json();
-        return result.file;
-    };
-    // --- END GEMINI FILE UPLOAD ---
-
+    // --- REMOVED uploadFileToGemini function ---
 
     const formatPrompt = () => {
         const finalTargetRole = getTargetRole();
@@ -78,7 +67,7 @@ const ResumeBuilder = () => {
 
         // This prompt structure is designed for the Gemini API
         return `
-            You are an expert career coach and technical recruiter. Your task is to analyze the provided resume file and compare it against the user's stated career goal.
+            You are an expert career coach and technical recruiter. Your task is to analyze the provided resume file (which could be a document or an image of a resume) and compare it against the user's stated career goal.
 
             1.  First, analyze the resume content thoroughly. Based ONLY on the skills, projects, and experience in the resume, determine which ONE of the following roles is the absolute BEST FIT for the candidate: ${allRoles.join(', ')}.
             2.  Second, compare your determined "best fit role" with the user's "selected target role", which is "${finalTargetRole}".
@@ -115,18 +104,19 @@ const ResumeBuilder = () => {
         setAnalysisResult(null);
 
         try {
-            // 1. Upload the file (PDF, DOCX, TXT) to Gemini
-            const uploadedFile = await uploadFileToGemini(resumeFile);
+            setLoadingMessage('Converting file...');
+            // 1. Convert the file to the format the API needs (inlineData)
+            const filePart = await fileToGenerativePart(resumeFile);
             
             setLoadingMessage('AI is analyzing your resume...');
 
             // 2. Prepare the prompt for the model
             const prompt = formatPrompt();
             
-            // 3. Call the Gemini model with the file reference
-            const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-            // Use a model that supports file (blob) inputs
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`; 
+            // 3. Call the Gemini model with the file data *inline*
+            const apiKey = import.meta.env.VITE_GEMINI_API_KEY1; 
+            
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
             const response = await fetch(apiUrl, {
                 method: 'POST',
@@ -135,8 +125,7 @@ const ResumeBuilder = () => {
                     contents: [{
                         parts: [
                             { text: prompt },
-                            // Pass the file data using its URI
-                            { file_data: { mime_type: uploadedFile.mimeType, file_uri: uploadedFile.uri } }
+                            filePart // Pass the inlineData object
                         ]
                     }],
                     // Request JSON output
@@ -177,8 +166,22 @@ const ResumeBuilder = () => {
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         if (file) {
-            setResumeFile(file);
-            setError(''); // Clear error on new file select
+            // Client-side validation for immediate feedback
+            const allowedTypes = [
+                "text/plain",
+                "application/pdf",
+                "application/msword",
+                "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                "image/jpeg",
+                "image/png"
+            ];
+            if (allowedTypes.includes(file.type)) {
+                setResumeFile(file);
+                setError(''); // Clear error on new file select
+            } else {
+                setResumeFile(null);
+                setError('Invalid file type. Only .pdf, .docx, .txt, .jpg, or .png files are supported.');
+            }
         }
     };
 
@@ -207,13 +210,15 @@ const ResumeBuilder = () => {
                 "text/plain",
                 "application/pdf",
                 "application/msword",
-                "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                "image/jpeg", // --- ADDED ---
+                "image/png"   // --- ADDED ---
             ];
             if (allowedTypes.includes(file.type)) {
                 setResumeFile(file);
                 setError('');
             } else {
-                setError('Invalid file type. Only .pdf, .docx, or .txt files are supported.');
+                setError('Invalid file type. Only .pdf, .docx, .txt, .jpg, or .png files are supported.'); // --- UPDATED ---
                 setResumeFile(null);
             }
         }
@@ -265,14 +270,14 @@ const ResumeBuilder = () => {
                             ref={fileInputRef} 
                             onChange={handleFileChange} 
                             style={{ display: 'none' }}
-                            // --- RESTORED FILE TYPES ---
-                            accept=".txt,.pdf,.doc,.docx,text/plain,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                            // --- UPDATED FILE TYPES ---
+                            accept=".txt,.pdf,.doc,.docx,.jpg,.jpeg,.png,text/plain,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/jpeg,image/png"
                         />
                         <div className="file-prompt-content">
                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="upload-icon"><path fillRule="evenodd" d="M10.5 3.75a2.25 2.25 0 00-2.25 2.25v10.19l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V6a2.25 2.25 0 00-2.25-2.25z" clipRule="evenodd" /><path d="M16.5 3.75a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0V3.75z" /></svg>
                             {resumeFile ? <span>File Selected: <strong>{resumeFile.name}</strong></span> : <span>Click to upload or drop your resume here</span>}
-                            {/* --- RESTORED HELP TEXT --- */}
-                            <p className="file-types">Supports .pdf, .docx, .txt</p>
+                            {/* --- UPDATED HELP TEXT --- */}
+                            <p className="file-types">Supports .pdf, .docx, .txt, .jpg, .png</p>
                         </div>
                     </div>
                 </div>
