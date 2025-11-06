@@ -235,10 +235,10 @@ const Assessment = () => {
 
   const handleViewRoadmap = () => {
   if (results) {
-    // navigate to the roadmap page and pass the top 3 careers as data
-    navigate('/roadmap', { state: { topCareers: results.scores.slice(0, 3) } });
+    navigate('/roadmaps', { state: { topCareers: results.scores.slice(0, 3) } });
   }
 };
+
 
 
   return (
