@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer.jsx';
 import Chatbot from './components/Chatbot.jsx';    
+import NetworkStatus from './components/NetworkStatus';
 import './App.css';
 
 // --- Import Core Page Components ---
