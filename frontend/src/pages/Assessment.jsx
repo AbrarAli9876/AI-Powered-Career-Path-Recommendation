@@ -240,7 +240,6 @@ const Assessment = () => {
 };
 
 
-
   return (
     <div className="assessment-container">
       {results && (
