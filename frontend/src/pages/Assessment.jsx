@@ -234,11 +234,12 @@ const Assessment = () => {
   };
 
   const handleViewRoadmap = () => {
-    if (results) {
-      const pathSlug = results.primaryRecommendation.toLowerCase().replace(/\s+/g, '-');
-      navigate(`/${pathSlug}`);
-    }
-  };
+  if (results) {
+    // navigate to the roadmap page and pass the top 3 careers as data
+    navigate('/roadmap', { state: { topCareers: results.scores.slice(0, 3) } });
+  }
+};
+
 
   return (
     <div className="assessment-container">
@@ -247,9 +248,9 @@ const Assessment = () => {
           <div className="results-modal-content">
             <h2>Analysis Complete!</h2>
             <p className="analysis-text">{results.analysis}</p>
-            <h3>Your Career Path Affinity:</h3>
+            <h3>Your Top 3 Career Path Suggestions:</h3>
             <div className="scores-container">
-              {results.scores.map(item => (
+              {results.scores.slice(0, 3).map(item => (
                 <div className="score-item" key={item.career}>
                   <span className="career-name">{item.career}</span>
                   <div className="score-bar-container">
@@ -293,7 +294,6 @@ const Assessment = () => {
                   />
                   <label htmlFor={`${q.id}-${opt}`}>{opt}</label>
 
-                  {/* Show extra text field if "Other" is chosen */}
                   {answers[q.id] === opt && opt.includes('Other') && (
                     <input
                       type="text"
