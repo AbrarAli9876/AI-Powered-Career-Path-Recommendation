@@ -8,7 +8,7 @@ const Phase10Resources = () => (
         <style>{ResourceStyles}</style>
         <div className="resource-container">
             <header className="resource-header">
-                <h1>Stage 10: Big Data Technologies</h1>
+                <h1>Stage 10: Big Data</h1>
                 <p>Exploring tools and frameworks designed to process, store, and analyze large datasets efficiently.</p>
                 <Link to="/data-scientist" className="back-link">← Back to Data Scientist Roadmap</Link>
             </header>

@@ -137,7 +137,7 @@ const roadmapPhases = [
     { id: 7, title: 'Phase 7: Machine Learning', objective: 'Build a solid, practical understanding of classical supervised and unsupervised learning algorithms and the critical process of model evaluation.' },
     { id: 8, title: 'Phase 8: Deep Learning', objective: 'Learn the fundamentals of neural networks and explore specialized architectures like CNNs, RNNs, and Transformers for image, sequence, and language data.' },
     { id: 9, title: 'Phase 9: MLOps & Deployment', objective: 'Bridge the gap between building a model and making it available for real-world use by learning to create APIs, containerize applications, and deploy to the cloud.' },
-    { id: 10, title: 'Phase 10: Big Data Tools', objective: 'Gain a foundational understanding of the big data ecosystem, including distributed storage and processing with Hadoop, Spark, and Kafka.' },
+    { id: 10, title: 'Phase 10: Big Data', objective: 'Gain a foundational understanding of the big data ecosystem, including distributed storage and processing with Hadoop, Spark, and Kafka.' },
     { id: 11, title: 'Phase 11: Real-World Projects', objective: 'Synthesize all learned skills into cohesive, end-to-end projects that solve specific problems and build a powerful portfolio.' },
     { id: 12, title: 'Phase 12: Domain Specializations', objective: 'Develop specialized expertise in a specific domain like NLP, Computer Vision, or Finance to become a more valuable and competitive professional.' },
     { id: 13, title: 'Phase 13: Portfolio & Resume Building', objective: 'Strategically craft a compelling resume and a powerful portfolio that effectively communicate skills, projects, and impact to employers.' },
