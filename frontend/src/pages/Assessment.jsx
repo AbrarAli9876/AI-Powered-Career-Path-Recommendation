@@ -193,13 +193,22 @@ const Assessment = () => {
     setResults(null);
 
     const userPrompt = formatPrompt();
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
-    if (!apiKey) {
-      setError('API Key is missing.');
-      setLoading(false);
-      return;
+    // ---------------------------------------------------------
+    // TODO: PASTE YOUR ACTUAL API KEY HERE IF NOT USING .ENV
+    // ---------------------------------------------------------
+    const apiKey = "AIzaSyDsgwz8HFns2nUlRKXsIEwYiymI4ndreAM"; 
+    
+    // FIX: Updated to use 'gemini-2.0-flash' as requested
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+    if (!apiKey || apiKey.includes("PASTE_YOUR")) {
+      // If the hardcoded key is still placeholder, try the env var as a fallback
+      if (!import.meta.env.VITE_GEMINI_API_KEY) {
+          setError('API Key is missing. Please paste it in the code.');
+          setLoading(false);
+          return;
+      }
     }
 
     try {
@@ -211,34 +220,43 @@ const Assessment = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(`API error: ${response.statusText} - ${errorData.error.message}`);
+        throw new Error(`API error: ${response.status} - ${errorData.error?.message || response.statusText}`);
       }
 
       const result = await response.json();
       const responseText = result.candidates?.[0]?.content?.parts?.[0]?.text;
 
       if (responseText) {
-        const cleanedJsonString = responseText.replace(/```json|```/g, '').trim();
-        const parsedResults = JSON.parse(cleanedJsonString);
-        parsedResults.scores.sort((a, b) => b.score - a.score);
+        // Robust JSON extraction
+        const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+        
+        if (!jsonMatch) {
+            throw new Error("Failed to parse JSON from response");
+        }
+
+        const parsedResults = JSON.parse(jsonMatch[0]);
+        
+        if (parsedResults.scores) {
+            parsedResults.scores.sort((a, b) => b.score - a.score);
+        }
+        
         setResults(parsedResults);
       } else {
         throw new Error('API returned an empty response.');
       }
     } catch (err) {
-      setError('Failed to analyze results. Please try again.');
       console.error('Error processing API response:', err);
+      setError(`Failed to analyze results. ${err.message}`);
     } finally {
       setLoading(false);
     }
   };
 
   const handleViewRoadmap = () => {
-  if (results) {
-    navigate('/roadmaps', { state: { topCareers: results.scores.slice(0, 3) } });
-  }
-};
-
+    if (results) {
+      navigate('/roadmaps', { state: { topCareers: results.scores.slice(0, 3) } });
+    }
+  };
 
   return (
     <div className="assessment-container">

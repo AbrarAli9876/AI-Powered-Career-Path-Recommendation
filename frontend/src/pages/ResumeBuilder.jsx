@@ -116,7 +116,7 @@ const ResumeBuilder = () => {
             // 3. Call the Gemini model with the file data *inline*
             const apiKey = import.meta.env.VITE_GEMINI_API_KEY1; 
             
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
             const response = await fetch(apiUrl, {
                 method: 'POST',

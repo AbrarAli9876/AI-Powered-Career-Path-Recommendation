@@ -225,4 +225,3 @@
 .btn-primary:hover { background-color: #00ff84; }
 .btn-secondary { background-color: transparent; color: var(--text-light); border-color: var(--border-color); }
 .btn-secondary:hover { background-color: var(--card-background); border-color: var(--accent-secondary); }
-
