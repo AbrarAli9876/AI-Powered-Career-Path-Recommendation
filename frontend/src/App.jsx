@@ -179,25 +179,7 @@ import JSPhase14Resources from './pages/skills/JSPhase14Resources';
 import JSPhase15Resources from './pages/skills/JSPhase15Resources';
 import JSPhase16Resources from './pages/skills/JSPhase16Resources';
 
-// React Skill Roadmap Resources
-import ReactPhase1Resources from './pages/skills/ReactPhase1Resources';
-import ReactPhase2Resources from './pages/skills/ReactPhase2Resources';
-import ReactPhase3Resources from './pages/skills/ReactPhase3Resources';
-import ReactPhase4Resources from './pages/skills/ReactPhase4Resources';
-import ReactPhase5Resources from './pages/skills/ReactPhase5Resources';
-import ReactPhase6Resources from './pages/skills/ReactPhase6Resources';
-import ReactPhase7Resources from './pages/skills/ReactPhase7Resources';
-import ReactPhase8Resources from './pages/skills/ReactPhase8Resources';
-import ReactPhase9Resources from './pages/skills/ReactPhase9Resources';
-import ReactPhase10Resources from './pages/skills/ReactPhase10Resources';
-import ReactPhase11Resources from './pages/skills/ReactPhase11Resources';
-import ReactPhase12Resources from './pages/skills/ReactPhase12Resources';
-import ReactPhase13Resources from './pages/skills/ReactPhase13Resources';
-import ReactPhase14Resources from './pages/skills/ReactPhase14Resources';
-import ReactPhase15Resources from './pages/skills/ReactPhase15Resources';
-import ReactPhase16Resources from './pages/skills/ReactPhase16Resources';
-import ReactPhase17Resources from './pages/skills/ReactPhase17Resources';
-import ReactPhase18Resources from './pages/skills/ReactPhase18Resources';
+
 
 // SQL Skill Roadmap Resources
 import SQLPhase1Resources from './pages/skills/SQLPhase1Resources';
@@ -226,68 +208,7 @@ import CPlusPlusPhase5Resources from './pages/skills/CPlusPlusPhase5Resources';
 import CPlusPlusPhase6Resources from './pages/skills/CPlusPlusPhase6Resources';
 import CPlusPlusPhase7Resources from './pages/skills/CPlusPlusPhase7Resources';
 import CPlusPlusPhase8Resources from './pages/skills/CPlusPlusPhase8Resources';
-import CPlusPlusPhase9Resources from './pages/skills/CPlusPlusPhase9Resources';
-import CPlusPlusPhase10Resources from './pages/skills/CPlusPlusPhase10Resources';
-import CPlusPlusPhase11Resources from './pages/skills/CPlusPlusPhase11Resources';
-import CPlusPlusPhase12Resources from './pages/skills/CPlusPlusPhase12Resources';
-import CPlusPlusPhase13Resources from './pages/skills/CPLusPlusPhase13Resources';
-import CPlusPlusPhase14Resources from './pages/skills/CPlusPlusPhase14Resources';
-import CPlusPlusPhase15Resources from './pages/skills/CPlusPlusPhase15Resources';
-import CPlusPlusPhase16Resources from './pages/skills/CPlusPlusPhase16Resources';
-import CPlusPlusPhase17Resources from './pages/skills/CPlusPlusPhase17Resources';
-import CPlusPlusPhase18Resources from './pages/skills/CPlusPlusPhase18Resources';
-import CPlusPlusPhase19Resources from './pages/skills/CPlusPlusPhase19Resources';
 
-// Java Skill Roadmap Resources
-import JavaTopic1Resources from './pages/skills/JavaTopic1Resources';
-import JavaTopic2Resources from './pages/skills/JavaTopic2Resources';
-import JavaTopic3Resources from './pages/skills/JavaTopic3Resources';
-import JavaTopic4Resources from './pages/skills/JavaTopic4Resources';
-import JavaTopic5Resources from './pages/skills/JavaTopic5Resources';
-import JavaTopic6Resources from './pages/skills/JavaTopic6Resources';
-import JavaTopic7Resources from './pages/skills/JavaTopic7Resources';
-import JavaTopic8Resources from './pages/skills/JavaTopic8Resources';
-import JavaTopic9Resources from './pages/skills/JavaTopic9Resources';
-import JavaTopic10Resources from './pages/skills/JavaTopic10Resources';
-import JavaTopic11Resources from './pages/skills/JavaTopic11Resources';
-import JavaTopic12Resources from './pages/skills/JavaTopic12Resources';
-import JavaTopic13Resources from './pages/skills/JavaTopic13Resources';
-import JavaTopic14Resources from './pages/skills/JavaTopic14Resources';
-import JavaTopic15Resources from './pages/skills/JavaTopic15Resources';
-import JavaTopic16Resources from './pages/skills/JavaTopic16Resources';
-import JavaTopic17Resources from './pages/skills/JavaTopic17Resources';
-import JavaTopic18Resources from './pages/skills/JavaTopic18Resources';
-import JavaTopic19Resources from './pages/skills/JavaTopic19Resources';
-import JavaTopic20Resources from './pages/skills/JavaTopic20Resources';
-import JavaTopic21Resources from './pages/skills/JavaTopic21Resources';
-import JavaTopic22Resources from './pages/skills/JavaTopic22Resources';
-
-import AWSPhase1Resources from './pages/skills/AWSPhase1Resources';
-import AWSPhase2Resources from './pages/skills/AWSPhase2Resources';
-import AWSPhase3Resources from './pages/skills/AWSPhase3Resources';
-import AWSPhase4Resources from './pages/skills/AWSPhase4Resources';
-import AWSPhase5Resources from './pages/skills/AWSPhase5Resources';
-import AWSPhase6Resources from './pages/skills/AWSPhase6Resources';
-import AWSPhase7Resources from './pages/skills/AWSPhase7Resources';
-import AWSPhase8Resources from './pages/skills/AWSPhase8Resources';
-
-import CPhase1Resources from './pages/skills/CPhase1Resources';
-import CPhase2Resources from './pages/skills/CPhase2Resources';
-import CPhase3Resources from './pages/skills/CPhase3Resources';
-import CPhase4Resources from './pages/skills/CPhase4Resources';
-import CPhase5Resources from './pages/skills/CPhase5Resources';
-import CPhase6Resources from './pages/skills/CPhase6Resources';
-import CPhase7Resources from './pages/skills/CPhase7Resources';
-import CPhase8Resources from './pages/skills/CPhase8Resources';
-import CPhase9Resources from './pages/skills/CPhase9Resources';
-import CPhase10Resources from './pages/skills/CPhase10Resources';
-import CPhase11Resources from './pages/skills/CPhase11Resources';
-import CPhase12Resources from './pages/skills/CPhase12Resources';
-import CPhase13Resources from './pages/skills/CPhase13Resources';
-import CPhase14Resources from './pages/skills/CPhase14Resources';
-import CPhase15Resources from './pages/skills/CPhase15Resources';
-import CPhase16Resources from './pages/skills/CPhase16Resources';
-import CPhase17Resources from './pages/skills/CPhase17Resources';
 
 import GoPhase1Resources from './pages/skills/GoPhase1Resources';
 import GoPhase2Resources from './pages/skills/GoPhase2Resources';
@@ -469,25 +390,6 @@ function App() {
             <Route path="/skills/javascript/stage-15" element={<JSPhase15Resources />} />
             <Route path="/skills/javascript/stage-16" element={<JSPhase16Resources />} />
 
-            <Route path="/skills/react/stage-1" element={<ReactPhase1Resources />} />
-            <Route path="/skills/react/stage-2" element={<ReactPhase2Resources />} />
-            <Route path="/skills/react/stage-3" element={<ReactPhase3Resources />} />
-            <Route path="/skills/react/stage-4" element={<ReactPhase4Resources />} />
-            <Route path="/skills/react/stage-5" element={<ReactPhase5Resources />} />
-            <Route path="/skills/react/stage-6" element={<ReactPhase6Resources />} />
-            <Route path="/skills/react/stage-7" element={<ReactPhase7Resources />} />
-            <Route path="/skills/react/stage-8" element={<ReactPhase8Resources />} />
-            <Route path="/skills/react/stage-9" element={<ReactPhase9Resources />} />
-            <Route path="/skills/react/stage-10" element={<ReactPhase10Resources />} />
-            <Route path="/skills/react/stage-11" element={<ReactPhase11Resources />} />
-            <Route path="/skills/react/stage-12" element={<ReactPhase12Resources />} />
-            <Route path="/skills/react/stage-13" element={<ReactPhase13Resources />} />
-            <Route path="/skills/react/stage-14" element={<ReactPhase14Resources />} />
-            <Route path="/skills/react/stage-15" element={<ReactPhase15Resources />} />
-            <Route path="/skills/react/stage-16" element={<ReactPhase16Resources />} />
-            <Route path="/skills/react/stage-17" element={<ReactPhase17Resources />} />
-            <Route path="/skills/react/stage-18" element={<ReactPhase18Resources />} />
-
             <Route path="/skills/sql/stage-1" element={<SQLPhase1Resources />} />
             <Route path="/skills/sql/stage-2" element={<SQLPhase2Resources />} />
             <Route path="/skills/sql/stage-3" element={<SQLPhase3Resources />} />
@@ -513,67 +415,7 @@ function App() {
             <Route path="/skills/cplusplus/stage-6" element={<CPlusPlusPhase6Resources />} />
             <Route path="/skills/cplusplus/stage-7" element={<CPlusPlusPhase7Resources />} />
             <Route path="/skills/cplusplus/stage-8" element={<CPlusPlusPhase8Resources />} />
-            <Route path="/skills/cplusplus/stage-9" element={<CPlusPlusPhase9Resources />} />
-            <Route path="/skills/cplusplus/stage-10" element={<CPlusPlusPhase10Resources />} />
-            <Route path="/skills/cplusplus/stage-11" element={<CPlusPlusPhase11Resources />} />
-            <Route path="/skills/cplusplus/stage-12" element={<CPlusPlusPhase12Resources />} />
-            <Route path="/skills/cplusplus/stage-13" element={<CPlusPlusPhase13Resources />} />
-            <Route path="/skills/cplusplus/stage-14" element={<CPlusPlusPhase14Resources />} />
-            <Route path="/skills/cplusplus/stage-15" element={<CPlusPlusPhase15Resources />} />
-            <Route path="/skills/cplusplus/stage-16" element={<CPlusPlusPhase16Resources />} />
-            <Route path="/skills/cplusplus/stage-17" element={<CPlusPlusPhase17Resources />} />
-            <Route path="/skills/cplusplus/stage-18" element={<CPlusPlusPhase18Resources />} />
-            <Route path="/skills/cplusplus/stage-19" element={<CPlusPlusPhase19Resources />} />
 
-            <Route path="/skills/java/topic-1" element={<JavaTopic1Resources />} />
-            <Route path="/skills/java/topic-2" element={<JavaTopic2Resources />} />
-            <Route path="/skills/java/topic-3" element={<JavaTopic3Resources />} />
-            <Route path="/skills/java/topic-4" element={<JavaTopic4Resources />} />
-            <Route path="/skills/java/topic-5" element={<JavaTopic5Resources />} />
-            <Route path="/skills/java/topic-6" element={<JavaTopic6Resources />} />
-            <Route path="/skills/java/topic-7" element={<JavaTopic7Resources />} />
-            <Route path="/skills/java/topic-8" element={<JavaTopic8Resources />} />
-            <Route path="/skills/java/topic-9" element={<JavaTopic9Resources />} />
-            <Route path="/skills/java/topic-10" element={<JavaTopic10Resources />} />
-            <Route path="/skills/java/topic-11" element={<JavaTopic11Resources />} />
-            <Route path="/skills/java/topic-12" element={<JavaTopic12Resources />} />
-            <Route path="/skills/java/topic-13" element={<JavaTopic13Resources />} />
-            <Route path="/skills/java/topic-14" element={<JavaTopic14Resources />} />
-            <Route path="/skills/java/topic-15" element={<JavaTopic15Resources />} />
-            <Route path="/skills/java/topic-16" element={<JavaTopic16Resources />} />
-            <Route path="/skills/java/topic-17" element={<JavaTopic17Resources />} />
-            <Route path="/skills/java/topic-18" element={<JavaTopic18Resources />} />
-            <Route path="/skills/java/topic-19" element={<JavaTopic19Resources />} />
-            <Route path="/skills/java/topic-20" element={<JavaTopic20Resources />} />
-            <Route path="/skills/java/topic-21" element={<JavaTopic21Resources />} />
-            <Route path="/skills/java/topic-22" element={<JavaTopic22Resources />} />
-
-            <Route path="/skills/aws/phase-1" element={<AWSPhase1Resources />} />
-            <Route path="/skills/aws/phase-2" element={<AWSPhase2Resources />} />
-            <Route path="/skills/aws/phase-3" element={<AWSPhase3Resources />} />
-            <Route path="/skills/aws/phase-4" element={<AWSPhase4Resources />} />
-            <Route path="/skills/aws/phase-5" element={<AWSPhase5Resources />} />
-            <Route path="/skills/aws/phase-6" element={<AWSPhase6Resources />} />
-            <Route path="/skills/aws/phase-7" element={<AWSPhase7Resources />} />
-            <Route path="/skills/aws/phase-8" element={<AWSPhase8Resources />} />
-
-            <Route path="/skills/c/stage-1" element={<CPhase1Resources />} />
-            <Route path="/skills/c/stage-2" element={<CPhase2Resources />} />
-            <Route path="/skills/c/stage-3" element={<CPhase3Resources />} />
-            <Route path="/skills/c/stage-4" element={<CPhase4Resources />} />
-            <Route path="/skills/c/stage-5" element={<CPhase5Resources />} />
-            <Route path="/skills/c/stage-6" element={<CPhase6Resources />} />
-            <Route path="/skills/c/stage-7" element={<CPhase7Resources />} />
-            <Route path="/skills/c/stage-8" element={<CPhase8Resources />} />
-            <Route path="/skills/c/stage-9" element={<CPhase9Resources />} />
-            <Route path="/skills/c/stage-10" element={<CPhase10Resources />} />
-            <Route path="/skills/c/stage-11" element={<CPhase11Resources />} />
-            <Route path="/skills/c/stage-12" element={<CPhase12Resources />} />
-            <Route path="/skills/c/stage-13" element={<CPhase13Resources />} />
-            <Route path="/skills/c/stage-14" element={<CPhase14Resources />} />
-            <Route path="/skills/c/stage-15" element={<CPhase15Resources />} />
-            <Route path="/skills/c/stage-16" element={<CPhase16Resources />} />
-            <Route path="/skills/c/stage-17" element={<CPhase17Resources />} /> 
 
             <Route path="/skills/golang/stage-1" element={<GoPhase1Resources />} />
             <Route path="/skills/golang/stage-2" element={<GoPhase2Resources />} />
