@@ -1,4 +1,3 @@
-// src/pages/Assessment.jsx
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -169,17 +168,11 @@ const Assessment = () => {
         "analysis": "A short, encouraging 2–3 sentence explanation for the recommendation, based on their profile.",
         "scores": [
           {
-            "career": "Any relevant tech or job-based career path (e.g., Data Scientist, AI Engineer, DevOps Engineer, Blockchain Developer, Cloud Architect, Cybersecurity, Game Developer, etc.)",
+            "career": "Any relevant tech or job-based career path",
             "score": <integer_percentage>
-          },
-          ...
+          }
         ]
       }
-
-      Notes:
-      - Include 5 to 10 relevant career paths in the "scores" list.
-      - Always ensure the JSON is valid and correctly formatted.
-      - The top recommendation should logically fit the user’s profile.
 
       User Profile:
       ${userProfile.trim()}
@@ -194,21 +187,15 @@ const Assessment = () => {
 
     const userPrompt = formatPrompt();
 
-    // ---------------------------------------------------------
-    // TODO: PASTE YOUR ACTUAL API KEY HERE IF NOT USING .ENV
-    // ---------------------------------------------------------
-    const apiKey = "AIzaSyDsgwz8HFns2nUlRKXsIEwYiymI4ndreAM"; 
-    
-    // FIX: Updated to use 'gemini-2.0-flash' as requested
+    // ✅ ONLY FIX HERE — USING .env VARIABLE
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
-    if (!apiKey || apiKey.includes("PASTE_YOUR")) {
-      // If the hardcoded key is still placeholder, try the env var as a fallback
-      if (!import.meta.env.VITE_GEMINI_API_KEY) {
-          setError('API Key is missing. Please paste it in the code.');
-          setLoading(false);
-          return;
-      }
+    if (!apiKey) {
+      setError('API Key is missing in .env file');
+      setLoading(false);
+      return;
     }
 
     try {
@@ -227,19 +214,14 @@ const Assessment = () => {
       const responseText = result.candidates?.[0]?.content?.parts?.[0]?.text;
 
       if (responseText) {
-        // Robust JSON extraction
         const jsonMatch = responseText.match(/\{[\s\S]*\}/);
-        
-        if (!jsonMatch) {
-            throw new Error("Failed to parse JSON from response");
-        }
+        if (!jsonMatch) throw new Error("Failed to parse JSON from response");
 
         const parsedResults = JSON.parse(jsonMatch[0]);
-        
         if (parsedResults.scores) {
-            parsedResults.scores.sort((a, b) => b.score - a.score);
+          parsedResults.scores.sort((a, b) => b.score - a.score);
         }
-        
+
         setResults(parsedResults);
       } else {
         throw new Error('API returned an empty response.');
