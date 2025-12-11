@@ -96,7 +96,7 @@ const MockInterview = () => {
       return null;
     }
 
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-pro:generateContent?key=${apiKey}`;
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
     try {
       const response = await fetch(apiUrl, {
@@ -107,17 +107,24 @@ const MockInterview = () => {
         }),
       });
 
-      if (!response.ok) throw new Error(`API error: ${response.statusText}`);
+      if (!response.ok) {
+        const errorBody = await response.json().catch(() => null);
+        const errorMessage = errorBody?.error?.message || response.statusText;
+        throw new Error(`API error (${response.status}): ${errorMessage}`);
+      }
 
       const result = await response.json();
       const text = result.candidates?.[0]?.content?.parts?.[0]?.text || '';
-      
+
       // 2. CHANGED: Less aggressive cleanup so we don't break code in Ideal Answer (keeping * and _)
       return text
         .replace(/^(okay|alright|let's|sure|theory question|coding question)[^:]*:/i, '')
         .trim();
     } catch (err) {
-      setError('Failed to get a response from AI. Please check your API key.');
+      const userFriendly = err.message.includes('API error')
+        ? `Failed to get a response from AI (${err.message}). Please verify the API key, permissions, and quota.`
+        : 'Failed to get a response from AI. Please check your network and API key configuration.';
+      setError(userFriendly);
       console.error(err);
       return null;
     } finally {
