@@ -74,12 +74,6 @@ const questions = [
       'Other (please specify)',
     ],
   },
-  {
-    id: 'q9',
-    text: 'Anything more you would like to tell us about what you want to achieve?',
-    type: 'textarea',
-    placeholder: 'Tell us about your long-term goals, dream projects, or specific companies you admire...',
-  },
 ];
 
 const sliderValueMap = {
@@ -154,7 +148,6 @@ const Assessment = () => {
       - Enjoyed Activities: ${(answers.q6 || []).join(', ') || 'None specified'}
       - Future Project Interests: ${answers.q7 || 'Not specified'}
       - Most Exciting Area: ${focusArea}
-      - Long-term Goals/Aspirations: ${answers.q9 || 'Not specified'}
     `;
 
     return `
