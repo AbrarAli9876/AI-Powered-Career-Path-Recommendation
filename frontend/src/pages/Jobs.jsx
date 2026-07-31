@@ -1,6 +1,4 @@
-// src/pages/Jobs.jsx
-
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Jobs.css';
 
 const careerRoles = [
@@ -67,12 +65,7 @@ const Jobs = () => {
         } finally {
             setIsLoading(false);
         }
-    };
-
-    useEffect(() => {
-        fetchJobs(searchTerm, location);
-    }, []); // Fetch initial jobs on component mount
-
+    }; // Fetch initial jobs on component mount
     const handleSearch = (e) => {
         e.preventDefault();
         const finalSearchTerm = searchTerm === 'Write your own...' ? customSearchTerm : searchTerm;

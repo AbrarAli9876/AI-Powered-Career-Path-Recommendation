@@ -71,7 +71,6 @@ const questions = [
       'Protecting digital systems and data from attackers (Cybersecurity)',
       'Bringing interactive worlds and experiences to life (Game Development)',
       'Building automation, deployment, or integration systems (DevOps / CloudOps)',
-      'Other (please specify)',
     ],
   },
 ];
