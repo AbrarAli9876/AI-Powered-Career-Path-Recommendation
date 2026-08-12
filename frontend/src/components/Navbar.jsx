@@ -34,7 +34,7 @@ const Navbar = () => {
             to="/resume-Builder" 
             className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
           >
-            Resume Builder
+            Resume Analyzer
           </NavLink>
            <NavLink 
             to="/jobs" 
